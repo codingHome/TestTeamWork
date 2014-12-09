@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    //add by hanyang
+    NSLog(@"test team work 1");
 }
 
 - (void)didReceiveMemoryWarning {
