@@ -18,7 +18,9 @@
     [super viewDidLoad];
     //add by hanyang
     NSLog(@"test team work 1");
+    NSLog(@"shabihui") ;
     NSLog(@"weisuobang");
+
 }
 
 - (void)didReceiveMemoryWarning {
