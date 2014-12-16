@@ -29,7 +29,7 @@
     UIView* llview = [[UIView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/100, self.view.bounds.size.height/100, self.view.bounds.size.width/3, self.view.bounds.size.height/4)] ;
     llview.backgroundColor = [UIColor cyanColor] ;
     llview.alpha = 0.9 ;
-    UIButton* llbtn = [[UIButton alloc]init ] ;
+    UIButton* llbtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30) ] ;
     llbtn.center = llview.center ;
     llbtn.backgroundColor = [UIColor blueColor] ;
     [llbtn addTarget:self action:@selector(暖暖:) forControlEvents:UIControlEventTouchUpInside  ];

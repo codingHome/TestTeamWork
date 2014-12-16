@@ -10,6 +10,8 @@
 	<string>TestTeamWork</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>834011C228D4AD5304768FD18F08A473BE144256</key>
+		<string>https://github.com/atbj505/SILK-S-iOS.git</string>
 		<key>9541F4611CA164D079CBA1D54F5CEA9B48121613</key>
 		<string>github.com:codingHome/TestTeamWork.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>TestTeamWork.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>834011C228D4AD5304768FD18F08A473BE144256</key>
+		<string>../../..</string>
 		<key>9541F4611CA164D079CBA1D54F5CEA9B48121613</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>9541F4611CA164D079CBA1D54F5CEA9B48121613</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>834011C228D4AD5304768FD18F08A473BE144256</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
