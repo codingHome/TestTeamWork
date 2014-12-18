@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ComicOperation.h"
+#import "ComicModel.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<RYNetOperationDelegate>
 
 
 @end
