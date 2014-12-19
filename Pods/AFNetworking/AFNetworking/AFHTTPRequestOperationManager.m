@@ -98,6 +98,8 @@
 {
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = self.responseSerializer;
+    //应添加
+    //operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     operation.shouldUseCredentialStorage = self.shouldUseCredentialStorage;
     operation.credential = self.credential;
     operation.securityPolicy = self.securityPolicy;
