@@ -44,7 +44,7 @@
 /**
  *  完整的URL路径
  */
-- (NSString *)completeURL
+- (void)getcompleteURL
 {
     NSString *completeURL;
     
@@ -57,7 +57,7 @@
         completeURL = [NSString stringWithFormat:@"%@?%@", self.url, [self.params operationURL]];
     }
     
-    return completeURL;
+    _completeURL = completeURL;
 }
 /**
  *  配置信息
@@ -98,7 +98,7 @@
         complete:^(id result, NSError *error) {
             [self requestComplete:result error:error];
         }];
-    [self completeURL];
+    [self getcompleteURL];
 }
 
 - (void)postRequest
@@ -108,7 +108,7 @@
     [request POST:_url params:_params complete:^(id result, NSError *error) {
         [self requestComplete:result error:error];
     }];
-    [self completeURL];
+    [self getcompleteURL];
 }
 - (void)requestComplete:(id)result error:(NSError *)error
 {

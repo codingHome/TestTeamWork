@@ -12,6 +12,7 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "Masonry.h"
 //  单例宏定义
 #define DEFINE_SINGLETON_FOR_HEADER(className) \
 \
