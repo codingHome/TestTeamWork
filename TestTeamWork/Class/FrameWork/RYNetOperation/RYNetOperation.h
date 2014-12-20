@@ -20,7 +20,9 @@
 
 @end
 
-@interface RYNetOperation : NSObject
+@interface RYNetOperation : NSObject{
+@protected NSDictionary *_params;
+}
 /**
  *  代理
  */

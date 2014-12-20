@@ -16,7 +16,7 @@
 {
     RYNetOperation *operation = [[[self class] alloc] init];
     operation.delegate = delegate;
-    
+
     return operation;
 }
 - (id)init
@@ -25,7 +25,7 @@
         
         // 默认URL为空
         self.url = nil;
-        
+
         // 默认GET方法
         self.method = @"GET";
         

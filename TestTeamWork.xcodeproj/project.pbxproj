@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3E791658A2C7426D95C62011 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A14442401A72DA6647E1B75 /* libPods.a */; };
+		5796EC531A45AC490010CA73 /* RYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EC521A45AC490010CA73 /* RYModel.m */; };
+		5796EC561A45AC8F0010CA73 /* WoeidNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EC551A45AC8F0010CA73 /* WoeidNetOperation.m */; };
+		5796EC591A45ACA40010CA73 /* WoeidModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EC581A45ACA40010CA73 /* WoeidModel.m */; };
 		579AEB991A42A8A200C9AC1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEB7E1A42A8A200C9AC1B /* ViewController.m */; };
 		579AEBAC1A42AB0E00C9AC1B /* RYNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBA91A42AB0E00C9AC1B /* RYNetOperation.m */; };
 		579AEBAD1A42AB0E00C9AC1B /* RYRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBAB1A42AB0E00C9AC1B /* RYRequest.m */; };
 		579AEBB01A42B1AC00C9AC1B /* NSDictionary+OperationURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBAF1A42B1AC00C9AC1B /* NSDictionary+OperationURL.m */; };
-		579AEBB41A42B2E500C9AC1B /* ComicOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBB31A42B2E500C9AC1B /* ComicOperation.m */; };
-		579AEBB71A42B2F500C9AC1B /* ComicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBB61A42B2F500C9AC1B /* ComicModel.m */; };
-		579AEBDE1A42BF4100C9AC1B /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBDD1A42BF4100C9AC1B /* OrderModel.m */; };
 		A40902041A37302C00EE891E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902031A37302C00EE891E /* main.m */; };
 		A40902071A37302C00EE891E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902061A37302C00EE891E /* AppDelegate.m */; };
 		A409020F1A37302C00EE891E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A409020E1A37302C00EE891E /* Images.xcassets */; };
@@ -32,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5796EC511A45AC490010CA73 /* RYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYModel.h; sourceTree = "<group>"; };
+		5796EC521A45AC490010CA73 /* RYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYModel.m; sourceTree = "<group>"; };
+		5796EC541A45AC8F0010CA73 /* WoeidNetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoeidNetOperation.h; sourceTree = "<group>"; };
+		5796EC551A45AC8F0010CA73 /* WoeidNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoeidNetOperation.m; sourceTree = "<group>"; };
+		5796EC571A45ACA40010CA73 /* WoeidModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoeidModel.h; sourceTree = "<group>"; };
+		5796EC581A45ACA40010CA73 /* WoeidModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoeidModel.m; sourceTree = "<group>"; };
 		579AEB591A42A4C700C9AC1B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		579AEB7D1A42A8A200C9AC1B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		579AEB7E1A42A8A200C9AC1B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -41,12 +47,6 @@
 		579AEBAB1A42AB0E00C9AC1B /* RYRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYRequest.m; sourceTree = "<group>"; };
 		579AEBAE1A42B1AC00C9AC1B /* NSDictionary+OperationURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OperationURL.h"; sourceTree = "<group>"; };
 		579AEBAF1A42B1AC00C9AC1B /* NSDictionary+OperationURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OperationURL.m"; sourceTree = "<group>"; };
-		579AEBB21A42B2E500C9AC1B /* ComicOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicOperation.h; sourceTree = "<group>"; };
-		579AEBB31A42B2E500C9AC1B /* ComicOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicOperation.m; sourceTree = "<group>"; };
-		579AEBB51A42B2F500C9AC1B /* ComicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComicModel.h; sourceTree = "<group>"; };
-		579AEBB61A42B2F500C9AC1B /* ComicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComicModel.m; sourceTree = "<group>"; };
-		579AEBDC1A42BF4100C9AC1B /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
-		579AEBDD1A42BF4100C9AC1B /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
 		5A14442401A72DA6647E1B75 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40901FE1A37302C00EE891E /* TestTeamWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTeamWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40902021A37302C00EE891E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +80,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5796EC501A45AC300010CA73 /* Woeid */ = {
+			isa = PBXGroup;
+			children = (
+				5796EC541A45AC8F0010CA73 /* WoeidNetOperation.h */,
+				5796EC551A45AC8F0010CA73 /* WoeidNetOperation.m */,
+				5796EC571A45ACA40010CA73 /* WoeidModel.h */,
+				5796EC581A45ACA40010CA73 /* WoeidModel.m */,
+			);
+			path = Woeid;
+			sourceTree = "<group>";
+		};
 		579AEB7B1A42A8A200C9AC1B /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +122,7 @@
 		579AEB971A42A8A200C9AC1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				579AEBB11A42B2CB00C9AC1B /* Comic */,
+				5796EC501A45AC300010CA73 /* Woeid */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,27 +137,16 @@
 		579AEBA71A42AB0E00C9AC1B /* RYNetOperation */ = {
 			isa = PBXGroup;
 			children = (
-				579AEBAE1A42B1AC00C9AC1B /* NSDictionary+OperationURL.h */,
-				579AEBAF1A42B1AC00C9AC1B /* NSDictionary+OperationURL.m */,
 				579AEBA81A42AB0E00C9AC1B /* RYNetOperation.h */,
 				579AEBA91A42AB0E00C9AC1B /* RYNetOperation.m */,
 				579AEBAA1A42AB0E00C9AC1B /* RYRequest.h */,
 				579AEBAB1A42AB0E00C9AC1B /* RYRequest.m */,
+				5796EC511A45AC490010CA73 /* RYModel.h */,
+				5796EC521A45AC490010CA73 /* RYModel.m */,
+				579AEBAE1A42B1AC00C9AC1B /* NSDictionary+OperationURL.h */,
+				579AEBAF1A42B1AC00C9AC1B /* NSDictionary+OperationURL.m */,
 			);
 			path = RYNetOperation;
-			sourceTree = "<group>";
-		};
-		579AEBB11A42B2CB00C9AC1B /* Comic */ = {
-			isa = PBXGroup;
-			children = (
-				579AEBB21A42B2E500C9AC1B /* ComicOperation.h */,
-				579AEBB31A42B2E500C9AC1B /* ComicOperation.m */,
-				579AEBB51A42B2F500C9AC1B /* ComicModel.h */,
-				579AEBB61A42B2F500C9AC1B /* ComicModel.m */,
-				579AEBDC1A42BF4100C9AC1B /* OrderModel.h */,
-				579AEBDD1A42BF4100C9AC1B /* OrderModel.m */,
-			);
-			path = Comic;
 			sourceTree = "<group>";
 		};
 		60C8EAF9A37A82E77AC136A6 /* Pods */ = {
@@ -360,12 +360,12 @@
 			files = (
 				579AEB991A42A8A200C9AC1B /* ViewController.m in Sources */,
 				A40902071A37302C00EE891E /* AppDelegate.m in Sources */,
+				5796EC591A45ACA40010CA73 /* WoeidModel.m in Sources */,
 				579AEBAD1A42AB0E00C9AC1B /* RYRequest.m in Sources */,
 				579AEBB01A42B1AC00C9AC1B /* NSDictionary+OperationURL.m in Sources */,
-				579AEBB71A42B2F500C9AC1B /* ComicModel.m in Sources */,
-				579AEBB41A42B2E500C9AC1B /* ComicOperation.m in Sources */,
 				579AEBAC1A42AB0E00C9AC1B /* RYNetOperation.m in Sources */,
-				579AEBDE1A42BF4100C9AC1B /* OrderModel.m in Sources */,
+				5796EC531A45AC490010CA73 /* RYModel.m in Sources */,
+				5796EC561A45AC8F0010CA73 /* WoeidNetOperation.m in Sources */,
 				A40902041A37302C00EE891E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

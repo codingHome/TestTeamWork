@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ComicOperation.h"
-#import "ComicModel.h"
+#import "WoeidNetOperation.h"
+#import "WoeidModel.h"
 #import "UIImageView+WebCache.h"
 
 @interface ViewController : UIViewController<RYNetOperationDelegate>
