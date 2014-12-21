@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RYNetObserver.h"
 
 #define STRING(x) [NSString stringWithFormat:@"\"%@\"",x]
 

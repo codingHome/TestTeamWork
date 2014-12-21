@@ -20,6 +20,7 @@
 		57CB0F511A4668E500A83DC3 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F501A4668E500A83DC3 /* WeatherModel.m */; };
 		57CB0F561A466EC300A83DC3 /* ForeCastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F551A466EC300A83DC3 /* ForeCastModel.m */; };
 		57CB0F591A4671B400A83DC3 /* ConditionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F581A4671B400A83DC3 /* ConditionModel.m */; };
+		57CB0F5D1A469F3800A83DC3 /* RYNetObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F5C1A469F3800A83DC3 /* RYNetObserver.m */; };
 		A40902041A37302C00EE891E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902031A37302C00EE891E /* main.m */; };
 		A40902071A37302C00EE891E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902061A37302C00EE891E /* AppDelegate.m */; };
 		A409020F1A37302C00EE891E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A409020E1A37302C00EE891E /* Images.xcassets */; };
@@ -64,6 +65,8 @@
 		57CB0F551A466EC300A83DC3 /* ForeCastModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeCastModel.m; sourceTree = "<group>"; };
 		57CB0F571A4671B400A83DC3 /* ConditionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionModel.h; sourceTree = "<group>"; };
 		57CB0F581A4671B400A83DC3 /* ConditionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionModel.m; sourceTree = "<group>"; };
+		57CB0F5B1A469F3800A83DC3 /* RYNetObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYNetObserver.h; sourceTree = "<group>"; };
+		57CB0F5C1A469F3800A83DC3 /* RYNetObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYNetObserver.m; sourceTree = "<group>"; };
 		5A14442401A72DA6647E1B75 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40901FE1A37302C00EE891E /* TestTeamWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTeamWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40902021A37302C00EE891E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 		579AEB7F1A42A8A200C9AC1B /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				57CB0F5A1A469F1400A83DC3 /* RYNetObserver */,
 				57CB0F441A4658C100A83DC3 /* RYViewController */,
 				579AEBA71A42AB0E00C9AC1B /* RYNetOperation */,
 			);
@@ -200,6 +204,15 @@
 				57CB0F581A4671B400A83DC3 /* ConditionModel.m */,
 			);
 			path = WeatherForecast;
+			sourceTree = "<group>";
+		};
+		57CB0F5A1A469F1400A83DC3 /* RYNetObserver */ = {
+			isa = PBXGroup;
+			children = (
+				57CB0F5B1A469F3800A83DC3 /* RYNetObserver.h */,
+				57CB0F5C1A469F3800A83DC3 /* RYNetObserver.m */,
+			);
+			path = RYNetObserver;
 			sourceTree = "<group>";
 		};
 		60C8EAF9A37A82E77AC136A6 /* Pods */ = {
@@ -419,6 +432,7 @@
 				579AEBAD1A42AB0E00C9AC1B /* RYRequest.m in Sources */,
 				57CB0F4E1A4668CF00A83DC3 /* WeatherNetOperation.m in Sources */,
 				57CB0F511A4668E500A83DC3 /* WeatherModel.m in Sources */,
+				57CB0F5D1A469F3800A83DC3 /* RYNetObserver.m in Sources */,
 				57CB0F561A466EC300A83DC3 /* ForeCastModel.m in Sources */,
 				579AEBAC1A42AB0E00C9AC1B /* RYNetOperation.m in Sources */,
 				5796EC531A45AC490010CA73 /* RYModel.m in Sources */,

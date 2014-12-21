@@ -9,5 +9,11 @@
 #import "RYViewController.h"
 
 @implementation RYViewController
-
+-(void)viewDidLoad{
+    [[RYNetObserver sharedRYNetObserver]startNotifier];
+    [[RYNetObserver sharedRYNetObserver]registNotification:self selector:@selector(netStatusChangedCallback:)];
+}
+- (void)netStatusChangedCallback:(NSNotification *)note{
+    
+}
 @end

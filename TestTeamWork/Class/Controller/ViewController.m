@@ -42,4 +42,17 @@
 - (void)netOperationDidFailed:(RYNetOperation *)operation{
     NSLog(@"%@",operation.error);
 }
+#pragma mark -
+#pragma mark 网络状态监测回调
+- (void)netStatusChangedCallback:(NSNotification *)note{
+    RYNetStatus status = [[RYNetObserver sharedRYNetObserver]status];
+    switch (status) {
+        case RYNetStatus_WIFI:
+        case RYNetStatus_WWAN:
+            //TODO:有网状态下的判断
+            break;
+        case RYNetStatus_NONE:
+            break;
+    }
+}
 @end
