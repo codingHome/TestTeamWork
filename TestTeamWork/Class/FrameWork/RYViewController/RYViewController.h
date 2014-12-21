@@ -11,6 +11,6 @@
 
 #define STRING(x) [NSString stringWithFormat:@"\"%@\"",x]
 
-@interface RYViewController : UIViewController
+@interface RYViewController : UIViewController<CLLocationManagerDelegate>
 
 @end

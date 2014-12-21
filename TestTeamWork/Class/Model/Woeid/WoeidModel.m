@@ -9,6 +9,7 @@
 #import "WoeidModel.h"
 
 @implementation WoeidModel
+
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{

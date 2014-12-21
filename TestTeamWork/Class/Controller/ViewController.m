@@ -9,14 +9,14 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong)WoeidModel *woeidModel;
+@property (nonatomic, strong)WeatherModel *weatherModel;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self WoeidOperationWithLocation:STRING(@"beijing")];
 }
 - (void)WoeidOperationWithLocation:(NSString *)location{
     NSString *sql = [NSString stringWithFormat:@"select woeid from geo.placefinder where text=%@",location];
@@ -30,11 +30,13 @@
 #pragma mark 网络请求成功回调
 - (void)netOperationDidFinish:(RYNetOperation *)operation{
     if ([operation isKindOfClass:[WoeidNetOperation class]]) {
-        WoeidModel *model = [[WoeidModel alloc]initWithDictionary:operation.responseData error:nil];
-        [self WeatherOperationWithWoeid:model.woeid.integerValue];
+        self.woeidModel = [[WoeidModel alloc]initWithDictionary:operation.responseData error:nil];
+        [[RYCache sharedRYCache]putWoeidIntoTableWith:operation.responseData];
+        [self WeatherOperationWithWoeid:self.woeidModel.woeid.integerValue];
     }else if ([operation isKindOfClass:[WeatherNetOperation class]]){
-        WeatherModel *model = [[WeatherModel alloc]initWithDictionary:operation.responseData error:nil];
-        NSLog(@"%@",model);
+        self.weatherModel = [[WeatherModel alloc]initWithDictionary:operation.responseData error:nil];
+        [[RYCache sharedRYCache]putWeatherIntoTableWith:operation.responseData];
+        NSLog(@"%@",self.weatherModel);
     }
 }
 #pragma mark -
@@ -49,9 +51,12 @@
     switch (status) {
         case RYNetStatus_WIFI:
         case RYNetStatus_WWAN:
-            //TODO:有网状态下的判断
+            [self WoeidOperationWithLocation:STRING(@"beijing")];
             break;
-        case RYNetStatus_NONE:
+        case RYNetStatus_NONE:{
+            NSDictionary *dict = [[RYCache sharedRYCache]getWeather];
+            self.weatherModel = [[WeatherModel alloc]initWithDictionary:dict error:nil];
+        }
             break;
     }
 }

@@ -9,5 +9,4 @@
 #import "JSONModel.h"
 
 @interface RYModel : JSONModel
-
 @end

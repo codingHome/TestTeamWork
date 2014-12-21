@@ -10,9 +10,9 @@
 #import "RYViewController.h"
 #import "Woeid.h"
 #import "Weather.h"
-#import "UIImageView+WebCache.h"
+#import "RYFrameWork.h"
 
-@interface ViewController : RYViewController <RYNetOperationDelegate>
+@interface ViewController : RYViewController <RYNetOperationDelegate,CLLocationManagerDelegate>
 
 
 @end

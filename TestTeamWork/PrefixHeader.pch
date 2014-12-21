@@ -12,7 +12,15 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "Masonry.h"
+#import <CoreLocation/CoreLocation.h>
+
+//屏幕宽高
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
+//  系统版本
+#define SYSTEMVERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+
 //  单例宏定义
 #define DEFINE_SINGLETON_FOR_HEADER(className) \
 \
