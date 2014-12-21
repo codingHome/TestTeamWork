@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WoeidNetOperation.h"
-#import "WoeidModel.h"
+#import "RYViewController.h"
+#import "Woeid.h"
+#import "Weather.h"
 #import "UIImageView+WebCache.h"
 
-@interface ViewController : UIViewController<RYNetOperationDelegate>
+@interface ViewController : RYViewController <RYNetOperationDelegate>
 
 
 @end

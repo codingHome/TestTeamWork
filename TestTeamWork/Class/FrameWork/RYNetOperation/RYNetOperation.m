@@ -140,5 +140,36 @@
                             withObject:self];
     }
 }
+#pragma mark -
+#pragma mark YQLRequest
 
++ (instancetype)opeartionWithQuery:(NSString *)statement andDelegate:(id<RYNetOperationDelegate>)delegate{
+    
+    RYNetOperation *operation = [[[self class]alloc]init];
+    operation.delegate = delegate;
+    [operation dataRequestWirhStatement:statement];
+    
+    return operation;
+}
+
+- (void)dataRequestWirhStatement:(NSString *)statement{
+    NSString *query = [NSString stringWithFormat:@"%@%@%@", QUERY_PREFIX, [statement stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding], QUERY_SUFFIX];
+    
+    NSData *jsonData = [[NSString stringWithContentsOfURL:[NSURL URLWithString:query] encoding:NSUTF8StringEncoding error:nil] dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    NSDictionary *result = nil;
+    
+    if (jsonData) {
+        result = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        if (error) {
+            _error = error;
+            [self failedCallback];
+        }
+        _responseData = result;
+        [self successCallback];
+    }else{
+        _error = [[NSError alloc]initWithDomain:@"数据错误" code:-1 userInfo:nil];;
+        [self failedCallback];
+    }
+}
 @end

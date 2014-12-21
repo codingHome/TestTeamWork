@@ -14,7 +14,12 @@
 		579AEB991A42A8A200C9AC1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEB7E1A42A8A200C9AC1B /* ViewController.m */; };
 		579AEBAC1A42AB0E00C9AC1B /* RYNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBA91A42AB0E00C9AC1B /* RYNetOperation.m */; };
 		579AEBAD1A42AB0E00C9AC1B /* RYRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBAB1A42AB0E00C9AC1B /* RYRequest.m */; };
-		579AEBB01A42B1AC00C9AC1B /* NSDictionary+OperationURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEBAF1A42B1AC00C9AC1B /* NSDictionary+OperationURL.m */; };
+		57CB0F3D1A46439800A83DC3 /* NSDictionary+OperationURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F3C1A46439800A83DC3 /* NSDictionary+OperationURL.m */; };
+		57CB0F4A1A4659F500A83DC3 /* RYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F491A4659F500A83DC3 /* RYViewController.m */; };
+		57CB0F4E1A4668CF00A83DC3 /* WeatherNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F4D1A4668CF00A83DC3 /* WeatherNetOperation.m */; };
+		57CB0F511A4668E500A83DC3 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F501A4668E500A83DC3 /* WeatherModel.m */; };
+		57CB0F561A466EC300A83DC3 /* ForeCastModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F551A466EC300A83DC3 /* ForeCastModel.m */; };
+		57CB0F591A4671B400A83DC3 /* ConditionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CB0F581A4671B400A83DC3 /* ConditionModel.m */; };
 		A40902041A37302C00EE891E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902031A37302C00EE891E /* main.m */; };
 		A40902071A37302C00EE891E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902061A37302C00EE891E /* AppDelegate.m */; };
 		A409020F1A37302C00EE891E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A409020E1A37302C00EE891E /* Images.xcassets */; };
@@ -45,8 +50,20 @@
 		579AEBA91A42AB0E00C9AC1B /* RYNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYNetOperation.m; sourceTree = "<group>"; };
 		579AEBAA1A42AB0E00C9AC1B /* RYRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYRequest.h; sourceTree = "<group>"; };
 		579AEBAB1A42AB0E00C9AC1B /* RYRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYRequest.m; sourceTree = "<group>"; };
-		579AEBAE1A42B1AC00C9AC1B /* NSDictionary+OperationURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OperationURL.h"; sourceTree = "<group>"; };
-		579AEBAF1A42B1AC00C9AC1B /* NSDictionary+OperationURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OperationURL.m"; sourceTree = "<group>"; };
+		57CB0F3B1A46439800A83DC3 /* NSDictionary+OperationURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OperationURL.h"; sourceTree = "<group>"; };
+		57CB0F3C1A46439800A83DC3 /* NSDictionary+OperationURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OperationURL.m"; sourceTree = "<group>"; };
+		57CB0F481A4659F500A83DC3 /* RYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYViewController.h; sourceTree = "<group>"; };
+		57CB0F491A4659F500A83DC3 /* RYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYViewController.m; sourceTree = "<group>"; };
+		57CB0F4C1A4668CF00A83DC3 /* WeatherNetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherNetOperation.h; sourceTree = "<group>"; };
+		57CB0F4D1A4668CF00A83DC3 /* WeatherNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherNetOperation.m; sourceTree = "<group>"; };
+		57CB0F4F1A4668E500A83DC3 /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = "<group>"; };
+		57CB0F501A4668E500A83DC3 /* WeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherModel.m; sourceTree = "<group>"; };
+		57CB0F521A466A7000A83DC3 /* Woeid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Woeid.h; sourceTree = "<group>"; };
+		57CB0F531A466AF700A83DC3 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		57CB0F541A466EC300A83DC3 /* ForeCastModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeCastModel.h; sourceTree = "<group>"; };
+		57CB0F551A466EC300A83DC3 /* ForeCastModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeCastModel.m; sourceTree = "<group>"; };
+		57CB0F571A4671B400A83DC3 /* ConditionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionModel.h; sourceTree = "<group>"; };
+		57CB0F581A4671B400A83DC3 /* ConditionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConditionModel.m; sourceTree = "<group>"; };
 		5A14442401A72DA6647E1B75 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40901FE1A37302C00EE891E /* TestTeamWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTeamWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40902021A37302C00EE891E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +100,7 @@
 		5796EC501A45AC300010CA73 /* Woeid */ = {
 			isa = PBXGroup;
 			children = (
+				57CB0F521A466A7000A83DC3 /* Woeid.h */,
 				5796EC541A45AC8F0010CA73 /* WoeidNetOperation.h */,
 				5796EC551A45AC8F0010CA73 /* WoeidNetOperation.m */,
 				5796EC571A45ACA40010CA73 /* WoeidModel.h */,
@@ -95,8 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				579AEB971A42A8A200C9AC1B /* Model */,
-				579AEB981A42A8A200C9AC1B /* View */,
+				57CB0F3A1A46436700A83DC3 /* View */,
 				579AEB7C1A42A8A200C9AC1B /* Controller */,
+				57CB0F391A46436700A83DC3 /* Catelog */,
 				579AEB7F1A42A8A200C9AC1B /* FrameWork */,
 			);
 			path = Class;
@@ -114,6 +133,7 @@
 		579AEB7F1A42A8A200C9AC1B /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				57CB0F441A4658C100A83DC3 /* RYViewController */,
 				579AEBA71A42AB0E00C9AC1B /* RYNetOperation */,
 			);
 			path = FrameWork;
@@ -122,16 +142,10 @@
 		579AEB971A42A8A200C9AC1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				57CB0F4B1A46688500A83DC3 /* WeatherForecast */,
 				5796EC501A45AC300010CA73 /* Woeid */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		579AEB981A42A8A200C9AC1B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		579AEBA71A42AB0E00C9AC1B /* RYNetOperation */ = {
@@ -143,10 +157,49 @@
 				579AEBAB1A42AB0E00C9AC1B /* RYRequest.m */,
 				5796EC511A45AC490010CA73 /* RYModel.h */,
 				5796EC521A45AC490010CA73 /* RYModel.m */,
-				579AEBAE1A42B1AC00C9AC1B /* NSDictionary+OperationURL.h */,
-				579AEBAF1A42B1AC00C9AC1B /* NSDictionary+OperationURL.m */,
 			);
 			path = RYNetOperation;
+			sourceTree = "<group>";
+		};
+		57CB0F391A46436700A83DC3 /* Catelog */ = {
+			isa = PBXGroup;
+			children = (
+				57CB0F3B1A46439800A83DC3 /* NSDictionary+OperationURL.h */,
+				57CB0F3C1A46439800A83DC3 /* NSDictionary+OperationURL.m */,
+			);
+			path = Catelog;
+			sourceTree = "<group>";
+		};
+		57CB0F3A1A46436700A83DC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57CB0F441A4658C100A83DC3 /* RYViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57CB0F481A4659F500A83DC3 /* RYViewController.h */,
+				57CB0F491A4659F500A83DC3 /* RYViewController.m */,
+			);
+			path = RYViewController;
+			sourceTree = "<group>";
+		};
+		57CB0F4B1A46688500A83DC3 /* WeatherForecast */ = {
+			isa = PBXGroup;
+			children = (
+				57CB0F531A466AF700A83DC3 /* Weather.h */,
+				57CB0F4C1A4668CF00A83DC3 /* WeatherNetOperation.h */,
+				57CB0F4D1A4668CF00A83DC3 /* WeatherNetOperation.m */,
+				57CB0F4F1A4668E500A83DC3 /* WeatherModel.h */,
+				57CB0F501A4668E500A83DC3 /* WeatherModel.m */,
+				57CB0F541A466EC300A83DC3 /* ForeCastModel.h */,
+				57CB0F551A466EC300A83DC3 /* ForeCastModel.m */,
+				57CB0F571A4671B400A83DC3 /* ConditionModel.h */,
+				57CB0F581A4671B400A83DC3 /* ConditionModel.m */,
+			);
+			path = WeatherForecast;
 			sourceTree = "<group>";
 		};
 		60C8EAF9A37A82E77AC136A6 /* Pods */ = {
@@ -361,12 +414,17 @@
 				579AEB991A42A8A200C9AC1B /* ViewController.m in Sources */,
 				A40902071A37302C00EE891E /* AppDelegate.m in Sources */,
 				5796EC591A45ACA40010CA73 /* WoeidModel.m in Sources */,
+				57CB0F591A4671B400A83DC3 /* ConditionModel.m in Sources */,
+				57CB0F3D1A46439800A83DC3 /* NSDictionary+OperationURL.m in Sources */,
 				579AEBAD1A42AB0E00C9AC1B /* RYRequest.m in Sources */,
-				579AEBB01A42B1AC00C9AC1B /* NSDictionary+OperationURL.m in Sources */,
+				57CB0F4E1A4668CF00A83DC3 /* WeatherNetOperation.m in Sources */,
+				57CB0F511A4668E500A83DC3 /* WeatherModel.m in Sources */,
+				57CB0F561A466EC300A83DC3 /* ForeCastModel.m in Sources */,
 				579AEBAC1A42AB0E00C9AC1B /* RYNetOperation.m in Sources */,
 				5796EC531A45AC490010CA73 /* RYModel.m in Sources */,
 				5796EC561A45AC8F0010CA73 /* WoeidNetOperation.m in Sources */,
 				A40902041A37302C00EE891E /* main.m in Sources */,
+				57CB0F4A1A4659F500A83DC3 /* RYViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

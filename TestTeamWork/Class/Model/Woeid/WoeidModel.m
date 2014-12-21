@@ -9,5 +9,10 @@
 #import "WoeidModel.h"
 
 @implementation WoeidModel
-
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"query.results.Result.woeid": @"woeid"
+                                                       }];
+}
 @end

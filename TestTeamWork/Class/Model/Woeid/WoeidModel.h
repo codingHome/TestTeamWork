@@ -9,5 +9,5 @@
 #import "RYModel.h"
 
 @interface WoeidModel : RYModel
-
+@property (nonatomic ,strong)NSString *woeid;
 @end
