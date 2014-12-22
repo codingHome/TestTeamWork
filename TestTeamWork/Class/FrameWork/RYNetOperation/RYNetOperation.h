@@ -14,7 +14,6 @@
 
 #define QUERY_PREFIX @"http://query.yahooapis.com/v1/public/yql?q="
 #define QUERY_SUFFIX @"&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
-#define TABLE_NAME @"weather_table"
 
 @class RYNetOperation;
 #pragma mark -

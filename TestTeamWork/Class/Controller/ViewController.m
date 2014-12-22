@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self registeLocationMangerWithDelegate:self];
 }
 - (void)WoeidOperationWithLocation:(NSString *)location{
     NSString *sql = [NSString stringWithFormat:@"select woeid from geo.placefinder where text=%@",location];
@@ -49,13 +50,19 @@
     switch (status) {
         case RYNetStatus_WIFI:
         case RYNetStatus_WWAN:
-            [self WoeidOperationWithLocation:STRING(@"beijing")];
+            [self WoeidOperationWithLocation:STRING(@"北京")];
             break;
         case RYNetStatus_NONE:{
-            NSDictionary *dict = [[RYCache sharedRYCache]getObjectWithId:@"Weather" tableName:TABLE_NAME];
-            self.weatherModel = [[WeatherModel alloc]initWithDictionary:dict error:nil];
+            self.weatherModel = [[WeatherModel alloc]initWithId:@"Weather" tableName:TABLE_NAME];
         }
             break;
     }
+}
+#pragma mark - CLLocationManagerDelegate
+// 地理位置发生改变时触发
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    CLLocation *location = [locations lastObject];
+    [manager stopUpdatingLocation];
+    NSLog(@"%f,%f",location.coordinate.longitude,location.coordinate.latitude);
 }
 @end

@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "RYNetObserver.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define STRING(x) [NSString stringWithFormat:@"\"%@\"",x]
 
 @interface RYViewController : UIViewController<CLLocationManagerDelegate>
-
+/*
+ *  获取位置
+ */
+- (void)registeLocationMangerWithDelegate:(id<CLLocationManagerDelegate>)vc;
 @end

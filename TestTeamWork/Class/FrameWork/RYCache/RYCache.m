@@ -12,8 +12,6 @@
 
 DEFINE_SINGLETON_FOR_CLASS(RYCache)
 
-#define DBNAME @"cache.db"
-
 -(instancetype)init{
     self = [super initDBWithName:DBNAME];
     if (self) {

@@ -9,5 +9,12 @@
 #import "RYModel.h"
 
 @implementation RYModel
-
+- (instancetype)initWithId:(NSString *)ID tableName:(NSString *)table{
+    self = [super init];
+    if (self) {
+        NSDictionary *dict = [[RYCache sharedRYCache]getObjectWithId:@"Weather" tableName:TABLE_NAME];
+        self = [self initWithDictionary:dict error:nil];
+    }
+    return self;
+}
 @end

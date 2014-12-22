@@ -16,21 +16,17 @@
 - (void)netStatusChangedCallback:(NSNotification *)note{
     
 }
-- (void)locationManger{
+- (void)registeLocationMangerWithDelegate:(id<CLLocationManagerDelegate>)vc{
     CLLocationManager *manager = [[CLLocationManager alloc]init];
     if ([CLLocationManager locationServicesEnabled]) {
         if (SYSTEMVERSION >= 8.0){
             [manager requestAlwaysAuthorization];
-            manager.delegate = self;
-            //设置精度
-            [manager setDesiredAccuracy:kCLLocationAccuracyBest];
-        }else{
-            manager.delegate=self;
-            manager.desiredAccuracy=kCLLocationAccuracyBest;
-            manager.distanceFilter=100;
-            //启动位置更新
-            [manager startUpdatingLocation];
         }
+        manager.delegate=vc;
+        manager.desiredAccuracy=kCLLocationAccuracyBest;
+        manager.distanceFilter = 10;
+        //开始更新经纬度
+        [manager startUpdatingLocation];
     }
 }
 @end

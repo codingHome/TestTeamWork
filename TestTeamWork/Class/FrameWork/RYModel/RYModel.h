@@ -7,6 +7,11 @@
 //
 
 #import "JSONModel.h"
+#import "RYCache.h"
 
 @interface RYModel : JSONModel
+/*
+ *  读取缓存
+ */
+- (instancetype)initWithId:(NSString *)ID tableName:(NSString *)table;
 @end
