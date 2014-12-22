@@ -13,8 +13,6 @@
 DEFINE_SINGLETON_FOR_CLASS(RYCache)
 
 #define DBNAME @"cache.db"
-#define WOEIDTABLE @"woeid_table"
-#define WEATHERTABLE @"weather_table"
 
 -(instancetype)init{
     self = [super initDBWithName:DBNAME];
@@ -23,20 +21,12 @@ DEFINE_SINGLETON_FOR_CLASS(RYCache)
     }
     return self;
 }
--(void)putWoeidIntoTableWith:(NSDictionary*)dict{
-    [self createTableWithName:WOEIDTABLE];
-    [self deleteObjectById:@"woeid" fromTable:WOEIDTABLE];
-    [self putObject:dict withId:@"woeid" intoTable:WOEIDTABLE];
+-(void)putObjectIntoTableWith:(NSDictionary*)dict id:(NSString *)ID tableName:(NSString*)table{
+    [self createTableWithName:table];
+    [self deleteObjectById:ID fromTable:table];
+    [self putObject:dict withId:ID intoTable:table];
 }
--(id)getWoeid{
-    return [self getObjectById:@"woeid" fromTable:WOEIDTABLE];
-}
--(void)putWeatherIntoTableWith:(NSDictionary*)dict{
-    [self createTableWithName:WEATHERTABLE];
-    [self deleteObjectById:@"weather" fromTable:WEATHERTABLE];
-    [self putObject:dict withId:@"weather" intoTable:WEATHERTABLE];
-}
--(id)getWeather{
-    return [self getObjectById:@"weather" fromTable:WEATHERTABLE];
+-(id)getObjectWithId:(NSString *)ID tableName:(NSString*)table{
+    return [self getObjectById:ID fromTable:table];
 }
 @end

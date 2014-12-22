@@ -12,19 +12,12 @@
 DEFINE_SINGLETON_FOR_HEADER(RYCache);
 
 /*
- *  地理编码归档
+ *  数据归档
  */
--(void)putWoeidIntoTableWith:(NSDictionary*)dict;
+-(void)putObjectIntoTableWith:(NSDictionary*)dict id:(NSString *)ID tableName:(NSString*)table;
 /*
- *  地理编码取档
+ *  数据取档
  */
--(id)getWoeid;
-/*
- *  天气归档
- */
--(void)putWeatherIntoTableWith:(NSDictionary*)dict;
-/*
- *  天气取档
- */
--(id)getWeather;
+-(id)getObjectWithId:(NSString *)ID tableName:(NSString*)table;
+
 @end

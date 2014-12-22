@@ -120,11 +120,20 @@
         [self successCallback];
     }
 }
+- (void)transforModel{
+    NSString *classString = [NSString stringWithFormat:@"%@",[self class]];
+    classString = [classString substringToIndex:[classString rangeOfString:@"NetOperation"].location];
+    NSString *modelString = [NSString stringWithFormat:@"%@Model",classString];
+
+    _resultData = [[NSClassFromString(modelString) alloc]initWithDictionary:_responseData error:nil];
+    [[RYCache sharedRYCache]putObjectIntoTableWith:_responseData id:classString tableName:TABLE_NAME];
+}
 #pragma mark -
 #pragma mark - Callback Handle
 
 - (void)successCallback
 {
+    [self transforModel];
     // 请求成功回调
     if (self.delegate && [self.delegate respondsToSelector:@selector(netOperationDidFinish:)]) {
         [self.delegate performSelector:@selector(netOperationDidFinish:)

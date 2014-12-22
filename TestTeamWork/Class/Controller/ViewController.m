@@ -30,12 +30,10 @@
 #pragma mark 网络请求成功回调
 - (void)netOperationDidFinish:(RYNetOperation *)operation{
     if ([operation isKindOfClass:[WoeidNetOperation class]]) {
-        self.woeidModel = [[WoeidModel alloc]initWithDictionary:operation.responseData error:nil];
-        [[RYCache sharedRYCache]putWoeidIntoTableWith:operation.responseData];
+        self.woeidModel = operation.resultData;
         [self WeatherOperationWithWoeid:self.woeidModel.woeid.integerValue];
     }else if ([operation isKindOfClass:[WeatherNetOperation class]]){
-        self.weatherModel = [[WeatherModel alloc]initWithDictionary:operation.responseData error:nil];
-        [[RYCache sharedRYCache]putWeatherIntoTableWith:operation.responseData];
+        self.weatherModel = operation.resultData;
         NSLog(@"%@",self.weatherModel);
     }
 }
@@ -54,7 +52,7 @@
             [self WoeidOperationWithLocation:STRING(@"beijing")];
             break;
         case RYNetStatus_NONE:{
-            NSDictionary *dict = [[RYCache sharedRYCache]getWeather];
+            NSDictionary *dict = [[RYCache sharedRYCache]getObjectWithId:@"Weather" tableName:TABLE_NAME];
             self.weatherModel = [[WeatherModel alloc]initWithDictionary:dict error:nil];
         }
             break;

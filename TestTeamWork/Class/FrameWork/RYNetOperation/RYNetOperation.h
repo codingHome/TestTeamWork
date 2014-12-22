@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "RYRequest.h"
 #import "NSDictionary+OperationURL.h"
+#import "RYModel.h"
+#import "RYCache.h"
 
 #define QUERY_PREFIX @"http://query.yahooapis.com/v1/public/yql?q="
 #define QUERY_SUFFIX @"&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
+#define TABLE_NAME @"weather_table"
 
 @class RYNetOperation;
 #pragma mark -
@@ -56,9 +59,9 @@
  */
 @property (nonatomic, strong) NSString *responseDataTag;
 /**
- *  请求响应解析数组
+ *  请求响应解析对象
  */
-@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) id resultData;
 /**
  *  请求报错信息
  */
