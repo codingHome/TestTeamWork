@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E791658A2C7426D95C62011 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A14442401A72DA6647E1B75 /* libPods.a */; };
+		579605EB1A48FECC0022E1B3 /* UIColor+hexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 579605EA1A48FECC0022E1B3 /* UIColor+hexColor.m */; };
 		5796EC561A45AC8F0010CA73 /* WoeidNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EC551A45AC8F0010CA73 /* WoeidNetOperation.m */; };
 		5796EC591A45ACA40010CA73 /* WoeidModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5796EC581A45ACA40010CA73 /* WoeidModel.m */; };
 		579AEB991A42A8A200C9AC1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579AEB7E1A42A8A200C9AC1B /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		579605E91A48FECC0022E1B3 /* UIColor+hexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hexColor.h"; sourceTree = "<group>"; };
+		579605EA1A48FECC0022E1B3 /* UIColor+hexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hexColor.m"; sourceTree = "<group>"; };
 		5796EC541A45AC8F0010CA73 /* WoeidNetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoeidNetOperation.h; sourceTree = "<group>"; };
 		5796EC551A45AC8F0010CA73 /* WoeidNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoeidNetOperation.m; sourceTree = "<group>"; };
 		5796EC571A45ACA40010CA73 /* WoeidModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoeidModel.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 		57CB0F391A46436700A83DC3 /* Catelog */ = {
 			isa = PBXGroup;
 			children = (
+				579605E91A48FECC0022E1B3 /* UIColor+hexColor.h */,
+				579605EA1A48FECC0022E1B3 /* UIColor+hexColor.m */,
 				57CB0F3B1A46439800A83DC3 /* NSDictionary+OperationURL.h */,
 				57CB0F3C1A46439800A83DC3 /* NSDictionary+OperationURL.m */,
 			);
@@ -450,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				579AEB991A42A8A200C9AC1B /* ViewController.m in Sources */,
+				579605EB1A48FECC0022E1B3 /* UIColor+hexColor.m in Sources */,
 				A40902071A37302C00EE891E /* AppDelegate.m in Sources */,
 				5796EC591A45ACA40010CA73 /* WoeidModel.m in Sources */,
 				57CD73EC1A46EC4E00A00DF3 /* RYCache.m in Sources */,
