@@ -12,6 +12,7 @@
 -(void)viewDidLoad{
     [[RYNetObserver sharedRYNetObserver]startNotifier];
     [[RYNetObserver sharedRYNetObserver]registNotification:self selector:@selector(netStatusChangedCallback:)];
+    [UIApplication sharedApplication].statusBarHidden = YES;
 }
 - (void)netStatusChangedCallback:(NSNotification *)note{
     

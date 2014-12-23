@@ -11,8 +11,9 @@
 #import "Woeid.h"
 #import "Weather.h"
 #import "RYFrameWork.h"
+#import "RefreshScrollView.h"
 
-@interface ViewController : RYViewController <RYNetOperationDelegate,CLLocationManagerDelegate>
+@interface ViewController : RYViewController <RYNetOperationDelegate,CLLocationManagerDelegate,RefreshScrollViewDelegate>
 
 
 @end

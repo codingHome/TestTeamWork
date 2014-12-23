@@ -11,6 +11,7 @@
 @interface ViewController ()
 @property (nonatomic, strong)WoeidModel *woeidModel;
 @property (nonatomic, strong)WeatherModel *weatherModel;
+@property (nonatomic, strong)RefreshScrollView *scrollView;
 @end
 
 @implementation ViewController
@@ -18,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registeLocationMangerWithDelegate:self];
+    self.scrollView = [[RefreshScrollView alloc]initWithFrame:self.view.bounds];
+    self.scrollView.re_Delegate = self;
+    [self.view addSubview:self.scrollView];
 }
 - (void)WoeidOperationWithLocation:(NSString *)location{
     NSString *sql = [NSString stringWithFormat:@"select woeid from geo.placefinder where text=%@",location];
@@ -27,8 +31,7 @@
     NSString *sql = [NSString stringWithFormat:@"select item from weather.forecast where woeid=%d and u=\"c\"",woeid];
     [WeatherNetOperation opeartionWithQuery:sql andDelegate:self];;
 }
-#pragma mark -
-#pragma mark 网络请求成功回调
+#pragma mark - 网络请求成功回调
 - (void)netOperationDidFinish:(RYNetOperation *)operation{
     if ([operation isKindOfClass:[WoeidNetOperation class]]) {
         self.woeidModel = operation.resultData;
@@ -38,19 +41,16 @@
         NSLog(@"%@",self.weatherModel);
     }
 }
-#pragma mark -
-#pragma mark 网络请求失败回调
+#pragma mark - 网络请求失败回调
 - (void)netOperationDidFailed:(RYNetOperation *)operation{
     NSLog(@"%@",operation.error);
 }
-#pragma mark -
-#pragma mark 网络状态监测回调
+#pragma mark - 网络状态监测回调
 - (void)netStatusChangedCallback:(NSNotification *)note{
     RYNetStatus status = [[RYNetObserver sharedRYNetObserver]status];
     switch (status) {
         case RYNetStatus_WIFI:
         case RYNetStatus_WWAN:
-            [self WoeidOperationWithLocation:STRING(@"北京")];
             break;
         case RYNetStatus_NONE:{
             self.weatherModel = [[WeatherModel alloc]initWithId:@"Weather" tableName:TABLE_NAME];
@@ -64,5 +64,13 @@
     CLLocation *location = [locations lastObject];
     [manager stopUpdatingLocation];
     NSLog(@"%f,%f",location.coordinate.longitude,location.coordinate.latitude);
+}
+#pragma mark - RefreshScrollViewDelegate
+-(void)refresh{
+    [self WoeidOperationWithLocation:STRING(@"北京")];
+}
+- (void)dealloc
+{
+    [self.scrollView removePullToRefresh];
 }
 @end
