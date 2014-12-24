@@ -12,9 +12,9 @@
 #import "Weather.h"
 #import "RYFrameWork.h"
 #import "RefreshScrollView.h"
+#import "PanView.h"
 
 @interface ViewController : RYViewController <RYNetOperationDelegate,CLLocationManagerDelegate,RefreshScrollViewDelegate>
-
 
 @end
 

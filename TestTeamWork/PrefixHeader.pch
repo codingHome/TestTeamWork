@@ -12,6 +12,7 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "Masonry.h"
 
 //屏幕宽高
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width

@@ -12,16 +12,31 @@
 @property (nonatomic, strong)WoeidModel *woeidModel;
 @property (nonatomic, strong)WeatherModel *weatherModel;
 @property (nonatomic, strong)RefreshScrollView *scrollView;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self updateUI];
     [self registeLocationMangerWithDelegate:self];
+}
+- (void)updateUI{
     self.scrollView = [[RefreshScrollView alloc]initWithFrame:self.view.bounds];
     self.scrollView.re_Delegate = self;
     [self.view addSubview:self.scrollView];
+    
+    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
+    
+    PanView *view1 = [[PanView alloc]initWithFrame:CGRectMake(0, 50, SCREENWIDTH, 100) Tag:1];
+    [self.scrollView addSubview:view1];
+    
+    PanView *view2 = [[PanView alloc]initWithFrame:CGRectMake(0, 200, SCREENWIDTH, 100) Tag:2];
+    [self.scrollView addSubview:view2];
+    
 }
 - (void)WoeidOperationWithLocation:(NSString *)location{
     NSString *sql = [NSString stringWithFormat:@"select woeid from geo.placefinder where text=%@",location];
