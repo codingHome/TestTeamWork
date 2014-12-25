@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateUI];
+    [self WoeidOperationWithLocation:STRING(@"北京")];
     [self registeLocationMangerWithDelegate:self];
 }
 - (void)updateUI{
@@ -30,6 +31,7 @@
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
+    self.scrollView.contentOffset = CGPointMake(0, -64);
     
     PanView *view1 = [[PanView alloc]initWithFrame:CGRectMake(0, 50, SCREENWIDTH, 100) Tag:1];
     view1.text = @"11111";
