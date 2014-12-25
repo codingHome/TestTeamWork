@@ -12,6 +12,7 @@
 @interface PanView ()
 @property (nonatomic, assign)BOOL isExchange;
 @property (nonatomic, assign)CGPoint originCenter;
+@property (nonatomic, strong)UIView *subView;
 @end
 
 @implementation PanView
@@ -25,6 +26,14 @@
         self.isExchange = NO;
         self.originCenter = self.center;
         self.userInteractionEnabled = YES;
+        
+        self.subView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 50)];
+        self.subView.backgroundColor = [UIColor redColor];
+        self.subView.layer.cornerRadius = 5;
+        self.subView.layer.masksToBounds = YES;
+        self.subView.userInteractionEnabled = YES;
+        [self addSubview:self.subView];
+        
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panPView:)];
         [self addGestureRecognizer:pan];
         
@@ -34,30 +43,33 @@
 }
 -(void)panPView:(UIPanGestureRecognizer*)gr{
     CGPoint location = [gr locationInView:self.superview];
-    if (gr.state == UIGestureRecognizerStateBegan) {
-        self.alpha = 0.6f;
-        [self scaleAnimationWithView:self Value:@0.95];
-    }
-    if (gr.state == UIGestureRecognizerStateChanged) {
-        self.backgroundColor = [UIColor redColor];
-        [self centerAnimationWithView:self Value:CGPointMake(SCREENWIDTH / 2, location.y)];
-        
-        for (PanView *view in [PanModel sharedPanModel].views) {
-            if (view.tag != self.tag) {
-                if (CGRectContainsPoint(view.frame, self.center)) {
-                    if (!self.isExchange) {
-                        [self exchangeAnimationFirst:self Second:view];
-                        self.isExchange = YES;
+    //FIXME:坐标转换
+    if (CGRectContainsPoint(self.subView.frame, location)) {
+        if (gr.state == UIGestureRecognizerStateBegan) {
+            self.alpha = 0.6f;
+            [self scaleAnimationWithView:self Value:@0.95];
+        }
+        if (gr.state == UIGestureRecognizerStateChanged) {
+            self.backgroundColor = [UIColor redColor];
+            [self centerAnimationWithView:self Value:CGPointMake(SCREENWIDTH / 2, location.y)];
+            
+            for (PanView *view in [PanModel sharedPanModel].views) {
+                if (view.tag != self.tag) {
+                    if (CGRectContainsPoint(view.frame, self.center)) {
+                        if (!self.isExchange) {
+                            [self exchangeAnimationFirst:self Second:view];
+                            self.isExchange = YES;
+                        }
                     }
                 }
             }
+        }else if(gr.state == UIGestureRecognizerStateEnded){
+            self.backgroundColor = [UIColor blackColor];
+            self.alpha = 0.8f;
+            self.originCenter = CGPointMake(self.center.x, location.y);
+            self.isExchange = NO;
+            [self scaleAnimationWithView:self Value:@1.0];
         }
-    }else if(gr.state == UIGestureRecognizerStateEnded){
-        self.backgroundColor = [UIColor blackColor];
-        self.alpha = 0.8f;
-        self.originCenter = CGPointMake(self.center.x, location.y);
-        self.isExchange = NO;
-        [self scaleAnimationWithView:self Value:@1.0];
     }
 }
 - (void)exchangeAnimationFirst:(PanView*)firstView Second:(PanView*)secondView{
@@ -71,7 +83,6 @@
     animation1.toValue = [NSValue valueWithCGPoint:center];
     animation1.springSpeed = 10;
     animation1.springBounciness = 15;
-    //view.originCenter = center;
     [view pop_addAnimation:animation1 forKey:@"center"];
 }
 - (void)scaleAnimationWithView:(PanView *)view Value:(NSValue*)value{
