@@ -32,11 +32,16 @@
     }];
     
     PanView *view1 = [[PanView alloc]initWithFrame:CGRectMake(0, 50, SCREENWIDTH, 100) Tag:1];
+    view1.text = @"11111";
     [self.scrollView addSubview:view1];
     
     PanView *view2 = [[PanView alloc]initWithFrame:CGRectMake(0, 200, SCREENWIDTH, 100) Tag:2];
+    view2.text = @"22222222222222222";
     [self.scrollView addSubview:view2];
     
+    PanView *view3 = [[PanView alloc]initWithFrame:CGRectMake(0, 350, SCREENWIDTH, 100) Tag:3];
+    view3.text = @"33333333333333333333333333333333333";
+    [self.scrollView addSubview:view3];
 }
 - (void)WoeidOperationWithLocation:(NSString *)location{
     NSString *sql = [NSString stringWithFormat:@"select woeid from geo.placefinder where text=%@",location];

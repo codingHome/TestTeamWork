@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "POP.h"
+#import "UIImageView+WebCache.h"
 
 @interface PanView : UIView
+/*
+ *  文本
+ */
+@property (nonatomic, strong)NSString *text;
+/*
+ *  图像URL
+ */
+@property (nonatomic, strong)NSString *imageUrl;
 /*
  *  初始化&tag
  */

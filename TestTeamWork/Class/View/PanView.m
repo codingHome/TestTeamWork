@@ -9,9 +9,13 @@
 #import "PanView.h"
 #import "PanModel.h"
 
+#define GAP 10
+
 @interface PanView ()
 @property (nonatomic, assign)BOOL isExchange;
 @property (nonatomic, assign)CGPoint originCenter;
+@property (nonatomic, strong)UILabel *textLabel;
+@property (nonatomic, strong)UIImageView *detailImage;
 @end
 
 @implementation PanView
@@ -26,6 +30,8 @@
         self.originCenter = self.center;
         self.userInteractionEnabled = YES;
         
+        [self sizeToFit];
+        
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panPView:)];
         [self addGestureRecognizer:pan];
         
@@ -33,15 +39,50 @@
     }
     return self;
 }
+//  添加文本框
+-(void)setText:(NSString *)text{
+    self.textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, GAP, self.bounds.size.width, self.bounds.size.height/3)];
+    [self.textLabel setNumberOfLines:0];
+    self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    self.textLabel.text = text;
+    self.textLabel.font = FONT(23);
+    self.textLabel.textColor = [UIColor whiteColor];
+    self.textLabel.textAlignment = NSTextAlignmentLeft;
+    
+    [self.textLabel sizeToFit];
+    [self adjustFrame];
+    [self addSubview: self.textLabel];
+}
+//  添加图像控件
+-(void)setImageUrl:(NSString *)imageUrl{
+    self.detailImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, self.textLabel.frame.size.height + GAP, self.bounds.size.width, self.bounds.size.height/3)];
+    self.detailImage.contentMode = UIViewContentModeScaleAspectFit;
+    [self.detailImage sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    
+    CGFloat height = self.detailImage.image.size.height * self.detailImage.frame.size.width / self.detailImage.image.size.width;
+    
+    CGRect frame = self.detailImage.frame;
+    frame.size.height = height;
+    self.detailImage.frame = frame;
+    [self.detailImage setFrame:frame];
+    
+    [self adjustFrame];
+    [self addSubview: self.detailImage];
+}
+//  调整自身大小
+- (void)adjustFrame{
+    CGRect frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.textLabel.frame.size.height + self.detailImage.frame.size.height + 3*GAP);
+    self.frame = frame;
+}
+//  拖动手势
 -(void)panPView:(UIPanGestureRecognizer*)gr{
     CGPoint location = [gr locationInView:self.superview];
-    //FIXME:坐标转换
     if (gr.state == UIGestureRecognizerStateBegan) {
-        self.alpha = 0.6f;
         [self scaleAnimationWithView:self Value:@0.95];
     }
     if (gr.state == UIGestureRecognizerStateChanged) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor lightGrayColor];
         [self centerAnimationWithView:self Value:CGPointMake(SCREENWIDTH / 2, location.y)];
         
         for (PanView *view in [PanModel sharedPanModel].views) {
@@ -62,12 +103,14 @@
         [self scaleAnimationWithView:self Value:@1.0];
     }
 }
+//  视图交换
 - (void)exchangeAnimationFirst:(PanView*)firstView Second:(PanView*)secondView{
     [self centerAnimationWithView:firstView Value:secondView.center];
     
     [self centerAnimationWithView:secondView Value:self.originCenter];
     secondView.originCenter = firstView.originCenter;
 }
+//  POP_CENTER动画
 - (void)centerAnimationWithView:(PanView *)view Value:(CGPoint)center{
     POPSpringAnimation *animation1 = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
     animation1.toValue = [NSValue valueWithCGPoint:center];
@@ -75,6 +118,7 @@
     animation1.springBounciness = 15;
     [view pop_addAnimation:animation1 forKey:@"center"];
 }
+//  POP_SCALE动画
 - (void)scaleAnimationWithView:(PanView *)view Value:(NSValue*)value{
     POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleX];
     scaleAnimation.toValue = value;

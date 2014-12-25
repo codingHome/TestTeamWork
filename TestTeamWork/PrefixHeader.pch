@@ -21,6 +21,9 @@
 //  系统版本
 #define SYSTEMVERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
+//  字体
+#define FONT(x) [UIFont fontWithName:@"Heiti SC" size:x]
+
 //  单例宏定义
 #define DEFINE_SINGLETON_FOR_HEADER(className) \
 \

@@ -22,11 +22,11 @@
     return self;
 }
 - (void)creatGifScrollView{
-    for (NSUInteger i  = 0; i <= 29; i++) {
+    for (NSUInteger i  = 0; i <= 31; i++) {
         NSString *fileName = [NSString stringWithFormat:@"sun_%05d.png",i];
         [self.DrawingImgs addObject:[UIImage imageNamed:fileName]];
     }
-    for (NSUInteger i  = 30; i <= 109; i++) {
+    for (NSUInteger i  = 31; i <= 109; i++) {
         NSString *fileName = [NSString stringWithFormat:@"sun_%05d.png",i];
         [self.LoadingImgs addObject:[UIImage imageNamed:fileName]];
     }
