@@ -65,7 +65,6 @@
     CGRect frame = self.detailImage.frame;
     frame.size.height = height;
     self.detailImage.frame = frame;
-    [self.detailImage setFrame:frame];
     
     [self adjustFrame];
     [self addSubview: self.detailImage];

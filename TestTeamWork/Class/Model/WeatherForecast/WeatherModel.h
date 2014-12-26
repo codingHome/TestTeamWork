@@ -11,7 +11,10 @@
 #import "ConditionModel.h"
 
 @interface WeatherModel : RYModel
+@property (nonatomic, strong)NSString *created;
+@property (nonatomic, strong)NSString *imageURL;
+@property (nonatomic, assign)int imageWidth;
+@property (nonatomic, assign)int imageHeight;
 @property (nonatomic, strong)NSArray<ForeCastModel> *forecast;
 @property (nonatomic, strong)ConditionModel *condition;
-
 @end

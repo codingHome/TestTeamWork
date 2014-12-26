@@ -11,6 +11,10 @@
 @implementation WeatherModel
 +(JSONKeyMapper *)keyMapper{
     return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"query.created":@"created",
+                                                       @"query.results.channel.image.url":@"imageURL",
+                                                       @"query.results.channel.image.width":@"imageWidth",
+                                                       @"query.results.channel.image.height":@"imageHeight",
                                                        @"query.results.channel.item.forecast": @"forecast",
                                                        @"query.results.channel.item.condition": @"condition"
                                                        

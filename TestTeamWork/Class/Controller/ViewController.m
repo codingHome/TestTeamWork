@@ -20,13 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateUI];
-    [self WoeidOperationWithLocation:STRING(@"北京")];
     [self registeLocationMangerWithDelegate:self];
 }
 - (void)updateUI{
     self.scrollView = [[RefreshScrollView alloc]initWithFrame:self.view.bounds];
     self.scrollView.re_Delegate = self;
-    self.scrollView.cityText = @"北京";
     [self.view addSubview:self.scrollView];
     
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -51,7 +49,7 @@
     [WoeidNetOperation opeartionWithQuery:sql andDelegate:self];;
 }
 - (void)WeatherOperationWithWoeid:(int)woeid{
-    NSString *sql = [NSString stringWithFormat:@"select item from weather.forecast where woeid=%d and u=\"c\"",woeid];
+    NSString *sql = [NSString stringWithFormat:@"select image,item from weather.forecast where woeid=%d and u=\"c\"",woeid];
     [WeatherNetOperation opeartionWithQuery:sql andDelegate:self];;
 }
 #pragma mark - 网络请求成功回调

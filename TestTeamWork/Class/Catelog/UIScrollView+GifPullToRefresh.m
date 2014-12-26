@@ -27,6 +27,8 @@
 #import "UIScrollView+GifPullToRefresh.h"
 #import <objc/runtime.h>
 
+
+#define GAP 2
 typedef enum
 {
     GifPullToRefreshStateDrawing = 0,
@@ -95,30 +97,43 @@ static char UIScrollViewGifPullToRefresh;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-        _refreshView = [[UIImageView alloc] initWithFrame:CGRectMake(Offset, 0, GifRefreshControlHeight, GifRefreshControlHeight)];
+        _refreshView = [[UIImageView alloc] initWithFrame:CGRectMake(Offset, 0, GifRefreshControlHeight - 5, GifRefreshControlHeight - 5)];
         _refreshView.contentMode = UIViewContentModeScaleAspectFit;
         
-        self.cityLabel = [[UILabel alloc]initWithFrame:CGRectMake(Offset + GifRefreshControlHeight + 10, 0, 150, GifRefreshControlHeight)];
-        self.cityLabel.font = FONT(20);
-        self.cityLabel.backgroundColor = [UIColor clearColor];
-        self.cityLabel.textColor = [UIColor whiteColor];
-        self.cityLabel.textAlignment = NSTextAlignmentLeft;
+        self.timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(Offset + GifRefreshControlHeight + 10, 0, 150, GifRefreshControlHeight)];
+        self.timeLabel.font = FONT(13);
+        self.timeLabel.backgroundColor = [UIColor clearColor];
+        self.timeLabel.textColor = [UIColor whiteColor];
+        self.timeLabel.textAlignment = NSTextAlignmentLeft;
+        
+        WeatherModel *model = [[WeatherModel alloc]initWithId:@"Weather" tableName:TABLE_NAME];
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, model.imageWidth, model.imageHeight)];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:model.imageURL]];
+        
         
         [self addSubview:_refreshView];
-        [self addSubview:self.cityLabel];
+        [self addSubview:self.timeLabel];
+        [self addSubview:imageView];
         
-        [_refreshView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(self.mas_centerX).offset(-10);
-            make.top.mas_equalTo(self.mas_top);
-            make.width.mas_equalTo(GifRefreshControlHeight);
-            make.height.mas_equalTo(GifRefreshControlHeight);
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(self.mas_centerX);
+            make.top.mas_equalTo(self.mas_top).offset(GAP);
+            make.width.mas_equalTo(model.imageWidth);
+            make.height.mas_equalTo(model.imageHeight);
         }];
         
-        [self.cityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.mas_centerX).offset(10);
-            make.top.mas_equalTo(self.mas_top);
+        [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(imageView.mas_left);
+            make.top.mas_equalTo(self.mas_top).offset(GifRefreshControlHeight/2);
             make.width.mas_equalTo(@150);
-            make.height.mas_equalTo(GifRefreshControlHeight);
+            make.height.mas_equalTo(GifRefreshControlHeight/2);
+        }];
+        
+        [_refreshView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.timeLabel.mas_left).offset(-30);
+            make.top.mas_equalTo(self.mas_top).offset(GAP);
+            make.width.mas_equalTo(GifRefreshControlHeight - 5);
+            make.height.mas_equalTo(GifRefreshControlHeight - 5);
         }];
     }
     return self;

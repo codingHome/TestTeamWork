@@ -19,6 +19,5 @@
 @property (nonatomic, strong)NSMutableArray *DrawingImgs;
 @property (nonatomic, strong)NSMutableArray *LoadingImgs;
 @property (nonatomic, assign)id<RefreshScrollViewDelegate>re_Delegate;
-@property (nonatomic, strong)NSString *cityText;
 -(void)refresh;
 @end

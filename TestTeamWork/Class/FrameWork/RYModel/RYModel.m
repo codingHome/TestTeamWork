@@ -12,7 +12,7 @@
 - (instancetype)initWithId:(NSString *)ID tableName:(NSString *)table{
     self = [super init];
     if (self) {
-        NSDictionary *dict = [[RYCache sharedRYCache]getObjectWithId:@"Weather" tableName:TABLE_NAME];
+        NSDictionary *dict = [[RYCache sharedRYCache]getObjectWithId:ID tableName:table];
         self = [self initWithDictionary:dict error:nil];
     }
     return self;

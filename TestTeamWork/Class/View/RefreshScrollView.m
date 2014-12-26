@@ -32,15 +32,63 @@
     }
     __weak __typeof(&*self)weakSelf = self;
     [self addPullToRefreshWithDrawingImgs:self.DrawingImgs andLoadingImgs:self.LoadingImgs andActionHandler:^{
-        [weakSelf.re_Delegate reloadData];
+        [weakSelf netRequest];
         [weakSelf performSelector:@selector(didFinishPullToRefresh) withObject:nil afterDelay:2];
     }];
 }
--(void)setCityText:(NSString *)cityText{
-    self.refreshControl.cityLabel.text = cityText;
-}
 -(void)refresh{
+    [self netRequest];
+}
+-(void)netRequest{
+    WeatherModel *model = [[WeatherModel alloc]initWithId:@"Weather" tableName:TABLE_NAME];;
+    if (model) {
+        NSArray *timeArray = [model.created componentsSeparatedByString:@"T"];
+        NSString *time = [timeArray[1] substringToIndex:8];
+        NSString *date = [timeArray[0] stringByAppendingString:@" "];
+        time = [date stringByAppendingString:time];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSDate *upDate = [dateFormatter dateFromString:time];
+        
+        NSTimeZone *zone = [NSTimeZone systemTimeZone];
+        NSInteger interval = [zone secondsFromGMTForDate: upDate];
+        upDate = [upDate dateByAddingTimeInterval: interval];
+        
+        self.refreshControl.timeLabel.text = [self compareCurrentTime:upDate];
+    }
     [self.re_Delegate reloadData];
+}
+-(NSString *)compareCurrentTime:(NSDate*) compareDate
+{
+    NSTimeInterval  timeInterval = [compareDate timeIntervalSinceNow];
+    timeInterval = -timeInterval;
+    long temp = 0;
+    NSString *result;
+    if (timeInterval < 60) {
+        result = [NSString stringWithFormat:@"刚刚"];
+    }
+    else if((temp = timeInterval/60) <60){
+        result = [NSString stringWithFormat:@"%ld分前",temp];
+    }
+    
+    else if((temp = temp/60) <24){
+        result = [NSString stringWithFormat:@"%ld小时前",temp];
+    }
+    
+    else if((temp = temp/24) <30){
+        result = [NSString stringWithFormat:@"%ld天前",temp];
+    }
+    
+    else if((temp = temp/30) <12){
+        result = [NSString stringWithFormat:@"%ld月前",temp];
+    }
+    else{
+        temp = temp/12;
+        result = [NSString stringWithFormat:@"%ld年前",temp];
+    }
+    
+    return  result;
 }
 -(void)addSubview:(UIView *)view{
     [super addSubview:view];

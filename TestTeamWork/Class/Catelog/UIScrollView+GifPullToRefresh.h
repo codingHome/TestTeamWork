@@ -24,13 +24,15 @@
 //  THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "UIImageView+WebCache.h"
+#import "WeatherModel.h"
 
 #define GifRefreshControlHeight 50.0
 #define Offset 64.0
 
 @interface CHGifRefreshControl : UIView
 @property (nonatomic, weak) UIScrollView *scrollView;
-@property (nonatomic, strong) UILabel *cityLabel;
+@property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, copy) void (^pullToRefreshActionHandler)(void);
 @property (nonatomic, strong) NSArray *drawingImgs;
 @property (nonatomic, strong) NSArray *loadingImgs;
