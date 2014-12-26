@@ -27,20 +27,15 @@
 #import "UIScrollView+GifPullToRefresh.h"
 #import <objc/runtime.h>
 
-#define GifRefreshControlHeight 64.0
-#define Offset 64.0
+typedef enum
+{
+    GifPullToRefreshStateDrawing = 0,
+    GifPullToRefreshStateLoading,
+} GifPullToRefreshState;
 
 @interface CHGifRefreshControl()
 - (void)removeObservers;
 @end
-
-typedef enum
-{
-    GifPullToRefreshStateDrawing = 0,
-	GifPullToRefreshStateLoading,
-} GifPullToRefreshState;
-
-
 
 static char UIScrollViewGifPullToRefresh;
 @implementation UIScrollView (GifPullToRefresh)
@@ -102,8 +97,29 @@ static char UIScrollViewGifPullToRefresh;
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
         _refreshView = [[UIImageView alloc] initWithFrame:CGRectMake(Offset, 0, GifRefreshControlHeight, GifRefreshControlHeight)];
         _refreshView.contentMode = UIViewContentModeScaleAspectFit;
-        _refreshView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        
+        self.cityLabel = [[UILabel alloc]initWithFrame:CGRectMake(Offset + GifRefreshControlHeight + 10, 0, 150, GifRefreshControlHeight)];
+        self.cityLabel.font = FONT(20);
+        self.cityLabel.backgroundColor = [UIColor clearColor];
+        self.cityLabel.textColor = [UIColor whiteColor];
+        self.cityLabel.textAlignment = NSTextAlignmentLeft;
+        
         [self addSubview:_refreshView];
+        [self addSubview:self.cityLabel];
+        
+        [_refreshView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.mas_centerX).offset(-10);
+            make.top.mas_equalTo(self.mas_top);
+            make.width.mas_equalTo(GifRefreshControlHeight);
+            make.height.mas_equalTo(GifRefreshControlHeight);
+        }];
+        
+        [self.cityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.mas_centerX).offset(10);
+            make.top.mas_equalTo(self.mas_top);
+            make.width.mas_equalTo(@150);
+            make.height.mas_equalTo(GifRefreshControlHeight);
+        }];
     }
     return self;
 }
@@ -129,7 +145,6 @@ static char UIScrollViewGifPullToRefresh;
     [_scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     [_scrollView addObserver:self forKeyPath:@"pan.state" options:NSKeyValueObservingOptionNew context:nil];
 }
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (self.scrollView.contentOffset.y + self.originalContentInsectY <= 0) {

@@ -32,8 +32,20 @@
     }
     __weak __typeof(&*self)weakSelf = self;
     [self addPullToRefreshWithDrawingImgs:self.DrawingImgs andLoadingImgs:self.LoadingImgs andActionHandler:^{
-        [weakSelf.re_Delegate refresh];
+        [weakSelf.re_Delegate reloadData];
         [weakSelf performSelector:@selector(didFinishPullToRefresh) withObject:nil afterDelay:2];
     }];
+}
+-(void)setCityText:(NSString *)cityText{
+    self.refreshControl.cityLabel.text = cityText;
+}
+-(void)refresh{
+    [self.re_Delegate reloadData];
+}
+-(void)addSubview:(UIView *)view{
+    [super addSubview:view];
+    CGSize size = self.bounds.size;
+    size.height += view.bounds.size.height;
+    self.contentSize = size;
 }
 @end

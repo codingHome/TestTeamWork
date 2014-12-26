@@ -26,12 +26,13 @@
 - (void)updateUI{
     self.scrollView = [[RefreshScrollView alloc]initWithFrame:self.view.bounds];
     self.scrollView.re_Delegate = self;
+    self.scrollView.cityText = @"北京";
     [self.view addSubview:self.scrollView];
     
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
     }];
-    self.scrollView.contentOffset = CGPointMake(0, -64);
+    [self.scrollView refresh];
     
     PanView *view1 = [[PanView alloc]initWithFrame:CGRectMake(0, 50, SCREENWIDTH, 100) Tag:1];
     view1.text = @"11111";
@@ -88,7 +89,7 @@
     NSLog(@"%f,%f",location.coordinate.longitude,location.coordinate.latitude);
 }
 #pragma mark - RefreshScrollViewDelegate
--(void)refresh{
+-(void)reloadData{
     [self WoeidOperationWithLocation:STRING(@"北京")];
 }
 - (void)dealloc

@@ -25,8 +25,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define GifRefreshControlHeight 50.0
+#define Offset 64.0
+
 @interface CHGifRefreshControl : UIView
 @property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, strong) UILabel *cityLabel;
 @property (nonatomic, copy) void (^pullToRefreshActionHandler)(void);
 @property (nonatomic, strong) NSArray *drawingImgs;
 @property (nonatomic, strong) NSArray *loadingImgs;
