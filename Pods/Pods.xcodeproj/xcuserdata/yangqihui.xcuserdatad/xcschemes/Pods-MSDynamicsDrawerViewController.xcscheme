@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED492539307396E0A8E489EF"
-               BuildableName = "libPods-FMDB.a"
-               BlueprintName = "Pods-FMDB"
+               BlueprintIdentifier = "0CA50F5F99CFC9AA3C571A81"
+               BuildableName = "libPods-MSDynamicsDrawerViewController.a"
+               BlueprintName = "Pods-MSDynamicsDrawerViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

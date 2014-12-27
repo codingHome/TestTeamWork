@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MSDynamicsDrawerViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0ECA64AED00250EF777E8AD2</key>
+		<key>0CA50F5F99CFC9AA3C571A81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1DC45CC26E9AAF6D16EA2DA8</key>
+		<key>0ED521A5A2EA2661AEF228A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>217EB113FC066BEC8E9FEA90</key>
+		<key>2EE52102C6915EB641AAF12D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F6FFA474868DC3D6B526970</key>
+		<key>55FE5060337EAF1C933F821A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7A93C0D064C903513C590A7</key>
+		<key>67295888D163296E8E869B36</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDB48781C7B21BCADF36CAE4</key>
+		<key>9A1ADC2FF122ED7F326C94C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CBEB362E67164427F05A7CC3</key>
+		<key>A74F799FA53573CC1A52C32A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2E91ECE9924B0601CB72A43</key>
+		<key>AD70F693078F87E009C526E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9131EDE26553027A62691A5</key>
+		<key>ED492539307396E0A8E489EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F58D18BE611DF5C28CCA93A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
