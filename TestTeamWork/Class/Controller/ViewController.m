@@ -85,6 +85,7 @@
     CLLocation *location = [locations lastObject];
     [manager stopUpdatingLocation];
     NSLog(@"%f,%f",location.coordinate.longitude,location.coordinate.latitude);
+    //TODO:高德sdk 获取位置信息网络请求传参
 }
 #pragma mark - RefreshScrollViewDelegate
 -(void)reloadData{
