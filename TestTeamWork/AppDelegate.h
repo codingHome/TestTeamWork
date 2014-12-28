@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "MenuViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end
 

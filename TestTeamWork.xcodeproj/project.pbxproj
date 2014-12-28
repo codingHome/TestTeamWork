@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E791658A2C7426D95C62011 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A14442401A72DA6647E1B75 /* libPods.a */; };
+		574700711A502D9C0018045B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574700701A502D9C0018045B /* MenuViewController.m */; };
 		579605EB1A48FECC0022E1B3 /* UIColor+hexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 579605EA1A48FECC0022E1B3 /* UIColor+hexColor.m */; };
 		579606711A4943A10022E1B3 /* UIScrollView+GifPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 579606701A4943A10022E1B3 /* UIScrollView+GifPullToRefresh.m */; };
 		579606741A4943DB0022E1B3 /* RefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579606731A4943DB0022E1B3 /* RefreshScrollView.m */; };
@@ -154,6 +155,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5747006F1A502D9C0018045B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		574700701A502D9C0018045B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		579605E91A48FECC0022E1B3 /* UIColor+hexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hexColor.h"; sourceTree = "<group>"; };
 		579605EA1A48FECC0022E1B3 /* UIColor+hexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hexColor.m"; sourceTree = "<group>"; };
 		5796066F1A4943A10022E1B3 /* UIScrollView+GifPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GifPullToRefresh.h"; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 			children = (
 				579AEB7D1A42A8A200C9AC1B /* ViewController.h */,
 				579AEB7E1A42A8A200C9AC1B /* ViewController.m */,
+				5747006F1A502D9C0018045B /* MenuViewController.h */,
+				574700701A502D9C0018045B /* MenuViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -939,6 +944,7 @@
 				57CD73EC1A46EC4E00A00DF3 /* RYCache.m in Sources */,
 				57CB0F591A4671B400A83DC3 /* ConditionModel.m in Sources */,
 				57CB0F3D1A46439800A83DC3 /* NSDictionary+OperationURL.m in Sources */,
+				574700711A502D9C0018045B /* MenuViewController.m in Sources */,
 				579AEBAD1A42AB0E00C9AC1B /* RYRequest.m in Sources */,
 				57CB0F4E1A4668CF00A83DC3 /* WeatherNetOperation.m in Sources */,
 				57CB0F511A4668E500A83DC3 /* WeatherModel.m in Sources */,

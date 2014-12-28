@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<MSDynamicsDrawerViewControllerDelegate>
 
 @end
 
@@ -20,14 +20,41 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     
+    self.dynamicsDrawerViewController = [MSDynamicsDrawerViewController new];
+    
+    self.dynamicsDrawerViewController.delegate = self;
+
+    [self.dynamicsDrawerViewController addStyler:[MSDynamicsDrawerParallaxStyler styler] forDirection:MSDynamicsDrawerDirectionLeft];
+    
+    MenuViewController *menuVC = [[MenuViewController alloc]initWithNibName:nil bundle:nil];
+    
+    menuVC.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+    
+    [self.dynamicsDrawerViewController setDrawerViewController:menuVC forDirection:MSDynamicsDrawerDirectionLeft];
+    
     ViewController *vc = [[ViewController alloc]initWithNibName:nil bundle:nil];
     
-    self.window.rootViewController = vc;
+    [self.dynamicsDrawerViewController setPaneViewController:vc];
+    
+    self.window.rootViewController = self.dynamicsDrawerViewController;
     
     [self.window makeKeyAndVisible];
     
     return YES;
 }
+
+#pragma mark - MSDynamicsDrawerViewControllerDelegate
+
+- (void)dynamicsDrawerViewController:(MSDynamicsDrawerViewController *)drawerViewController mayUpdateToPaneState:(MSDynamicsDrawerPaneState)paneState forDirection:(MSDynamicsDrawerDirection)direction
+{
+    NSLog(@"Drawer view controller may update to state");
+}
+
+- (void)dynamicsDrawerViewController:(MSDynamicsDrawerViewController *)drawerViewController didUpdateToPaneState:(MSDynamicsDrawerPaneState)paneState forDirection:(MSDynamicsDrawerDirection)direction
+{
+    NSLog(@"Drawer view controller did update to state");
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
