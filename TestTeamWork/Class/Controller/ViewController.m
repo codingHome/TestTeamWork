@@ -51,10 +51,8 @@
 }
 - (void)createSearch{
     SearchTableViewController *searchVC = [[SearchTableViewController alloc]initWithNibName:nil bundle:nil];
-    searchVC.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:searchVC animated:YES completion:^{
-        searchVC.view.superview.backgroundColor = [UIColor clearColor];
-    }];
+    searchVC.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:searchVC animated:YES completion:nil];
 }
 - (void)WoeidOperationWithLocation:(NSString *)location{
     NSString *sql = [NSString stringWithFormat:@"select woeid from geo.placefinder where text=%@",location];
