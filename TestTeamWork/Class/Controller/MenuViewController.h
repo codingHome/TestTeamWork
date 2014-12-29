@@ -7,8 +7,7 @@
 //
 
 #import "RYViewController.h"
-#import "MSDynamicsDrawerViewController.h"
 
-@interface MenuViewController : RYViewController
-@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+@interface MenuViewController : RYViewController<UITableViewDataSource, UITableViewDelegate>
+
 @end

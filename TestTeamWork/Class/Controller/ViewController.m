@@ -12,17 +12,17 @@
 @property (nonatomic, strong)WoeidModel *woeidModel;
 @property (nonatomic, strong)WeatherModel *weatherModel;
 @property (nonatomic, strong)RefreshScrollView *scrollView;
-
+@property (nonatomic, strong)NavigationView *navi;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateUI];
+    [self initUI];
     [self registeLocationMangerWithDelegate:self];
 }
-- (void)updateUI{
+- (void)initUI{
     self.scrollView = [[RefreshScrollView alloc]initWithFrame:self.view.bounds];
     self.scrollView.re_Delegate = self;
     [self.view addSubview:self.scrollView];
@@ -31,6 +31,11 @@
         make.edges.mas_equalTo(self.view);
     }];
     [self.scrollView refresh];
+    
+    self.navi = [[NavigationView alloc]initWithFrame:CGRectMake(0, 5, SCREENWIDTH, 60)];
+    self.navi.delegate = self;
+    self.navi.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+    [self.view addSubview:self.navi];
     
     PanView *view1 = [[PanView alloc]initWithFrame:CGRectMake(0, 50, SCREENWIDTH, 100) Tag:1];
     view1.text = @"11111";
@@ -43,6 +48,13 @@
     PanView *view3 = [[PanView alloc]initWithFrame:CGRectMake(0, 350, SCREENWIDTH, 100) Tag:3];
     view3.text = @"33333333333333333333333333333333333";
     [self.scrollView addSubview:view3];
+}
+- (void)createSearch{
+    SearchTableViewController *searchVC = [[SearchTableViewController alloc]initWithNibName:nil bundle:nil];
+    searchVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:searchVC animated:YES completion:^{
+        searchVC.view.superview.backgroundColor = [UIColor clearColor];
+    }];
 }
 - (void)WoeidOperationWithLocation:(NSString *)location{
     NSString *sql = [NSString stringWithFormat:@"select woeid from geo.placefinder where text=%@",location];

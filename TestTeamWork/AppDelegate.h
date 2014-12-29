@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "MSDynamicsDrawerViewController.h"
 #import "MenuViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

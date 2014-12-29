@@ -261,7 +261,8 @@ void MSDynamicsDrawerDirectionActionForMaskedValues(NSInteger direction, MSDynam
     self.panePanGestureRecognizer.minimumNumberOfTouches = 1;
     self.panePanGestureRecognizer.maximumNumberOfTouches = 1;
     self.panePanGestureRecognizer.delegate = self;
-    [self.paneView addGestureRecognizer:self.panePanGestureRecognizer];
+    //FIXME:panGR
+    //[self.paneView addGestureRecognizer:self.panePanGestureRecognizer];
     
     self.paneTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(paneTapped:)];
     self.paneTapGestureRecognizer.numberOfTouchesRequired = 1;

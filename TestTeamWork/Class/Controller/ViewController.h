@@ -8,13 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RYViewController.h"
-#import "Woeid.h"
-#import "Weather.h"
-#import "RYFrameWork.h"
-#import "RefreshScrollView.h"
-#import "PanView.h"
+#import "ControllerHeader.h"
 
-@interface ViewController : RYViewController <RYNetOperationDelegate,CLLocationManagerDelegate,RefreshScrollViewDelegate>
-
+@interface ViewController : RYViewController <RYNetOperationDelegate,CLLocationManagerDelegate,RefreshScrollViewDelegate,NavigationViewDelegate>
+@property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 @end
 

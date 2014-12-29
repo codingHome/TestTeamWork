@@ -28,11 +28,10 @@
     
     MenuViewController *menuVC = [[MenuViewController alloc]initWithNibName:nil bundle:nil];
     
-    menuVC.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
-    
     [self.dynamicsDrawerViewController setDrawerViewController:menuVC forDirection:MSDynamicsDrawerDirectionLeft];
     
     ViewController *vc = [[ViewController alloc]initWithNibName:nil bundle:nil];
+    vc.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
     
     [self.dynamicsDrawerViewController setPaneViewController:vc];
     
