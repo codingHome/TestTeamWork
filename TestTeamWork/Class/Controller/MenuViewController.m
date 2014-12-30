@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
     self.myTableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
+    [self.myTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
     [self.view addSubview:self.myTableView];

@@ -140,6 +140,7 @@
 		57CF3BF51A4A997D00E2489F /* PanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CF3BF41A4A997D00E2489F /* PanModel.m */; };
 		57D362321A513B7A0080BFC2 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D362311A513B7A0080BFC2 /* NavigationView.m */; };
 		57D362351A5146690080BFC2 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D362341A5146690080BFC2 /* SearchTableViewController.m */; };
+		57DC65D31A52374000842AD4 /* RYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DC65D21A52374000842AD4 /* RYLocationManager.m */; };
 		A40902041A37302C00EE891E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902031A37302C00EE891E /* main.m */; };
 		A40902071A37302C00EE891E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902061A37302C00EE891E /* AppDelegate.m */; };
 		A409020F1A37302C00EE891E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A409020E1A37302C00EE891E /* Images.xcassets */; };
@@ -317,6 +318,8 @@
 		57D362331A5146690080BFC2 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		57D362341A5146690080BFC2 /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		57D362361A5146940080BFC2 /* ControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControllerHeader.h; sourceTree = "<group>"; };
+		57DC65D11A52374000842AD4 /* RYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYLocationManager.h; sourceTree = "<group>"; };
+		57DC65D21A52374000842AD4 /* RYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYLocationManager.m; sourceTree = "<group>"; };
 		5A14442401A72DA6647E1B75 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40901FE1A37302C00EE891E /* TestTeamWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTeamWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40902021A37302C00EE891E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -523,6 +526,7 @@
 				57CB0F5A1A469F1400A83DC3 /* RYNetObserver */,
 				57CB0F441A4658C100A83DC3 /* RYViewController */,
 				579AEBA71A42AB0E00C9AC1B /* RYNetOperation */,
+				57DC65D01A52371400842AD4 /* RYLocationManager */,
 			);
 			path = FrameWork;
 			sourceTree = "<group>";
@@ -625,6 +629,15 @@
 				57CD73EB1A46EC4E00A00DF3 /* RYCache.m */,
 			);
 			path = RYCache;
+			sourceTree = "<group>";
+		};
+		57DC65D01A52371400842AD4 /* RYLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				57DC65D11A52374000842AD4 /* RYLocationManager.h */,
+				57DC65D21A52374000842AD4 /* RYLocationManager.m */,
+			);
+			path = RYLocationManager;
 			sourceTree = "<group>";
 		};
 		60C8EAF9A37A82E77AC136A6 /* Pods */ = {
@@ -968,6 +981,7 @@
 				57CD73E81A46D40E00A00DF3 /* RYModel.m in Sources */,
 				5796EC561A45AC8F0010CA73 /* WoeidNetOperation.m in Sources */,
 				A40902041A37302C00EE891E /* main.m in Sources */,
+				57DC65D31A52374000842AD4 /* RYLocationManager.m in Sources */,
 				57D362321A513B7A0080BFC2 /* NavigationView.m in Sources */,
 				579606741A4943DB0022E1B3 /* RefreshScrollView.m in Sources */,
 				57CB0F4A1A4659F500A83DC3 /* RYViewController.m in Sources */,

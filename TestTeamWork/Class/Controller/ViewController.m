@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    [self registeLocationMangerWithDelegate:self];
+    [[RYLocationManager sharedRYLocationManager] registeLocationMangerWithDelegate:self];
 }
 - (void)initUI{
     self.scrollView = [[RefreshScrollView alloc]initWithFrame:self.view.bounds];

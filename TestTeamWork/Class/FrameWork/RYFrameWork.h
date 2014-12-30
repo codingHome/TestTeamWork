@@ -14,5 +14,6 @@
 #import "RYNetOperation.h"
 #import "RYNetObserver.h"
 #import "RYViewController.h"
+#import "RYLocationManager.h"
 
 #endif
