@@ -145,7 +145,7 @@
 		A40902071A37302C00EE891E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A40902061A37302C00EE891E /* AppDelegate.m */; };
 		A409020F1A37302C00EE891E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A409020E1A37302C00EE891E /* Images.xcassets */; };
 		A409021E1A37302C00EE891E /* TestTeamWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A409021D1A37302C00EE891E /* TestTeamWorkTests.m */; };
-		D26B4B8B1A52CB590092AFF5 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26B4B8A1A52CB590092AFF5 /* ShareViewController.m */; };
+		B4E8FCEF1A538FAE00C9F431 /* EditPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E8FCEE1A538FAE00C9F431 /* EditPlaceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -333,8 +333,8 @@
 		A409021D1A37302C00EE891E /* TestTeamWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTeamWorkTests.m; sourceTree = "<group>"; };
 		B317F4F69F58E502273B05C2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B42E01FB39FE0F10CCB7B4CD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		D26B4B891A52CB590092AFF5 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
-		D26B4B8A1A52CB590092AFF5 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		B4E8FCED1A538FAE00C9F431 /* EditPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPlaceViewController.h; sourceTree = "<group>"; };
+		B4E8FCEE1A538FAE00C9F431 /* EditPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPlaceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,8 +516,8 @@
 				57D362341A5146690080BFC2 /* SearchTableViewController.m */,
 				5747006F1A502D9C0018045B /* MenuViewController.h */,
 				574700701A502D9C0018045B /* MenuViewController.m */,
-				D26B4B891A52CB590092AFF5 /* ShareViewController.h */,
-				D26B4B8A1A52CB590092AFF5 /* ShareViewController.m */,
+				B4E8FCED1A538FAE00C9F431 /* EditPlaceViewController.h */,
+				B4E8FCEE1A538FAE00C9F431 /* EditPlaceViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -975,7 +975,6 @@
 				57CD73EC1A46EC4E00A00DF3 /* RYCache.m in Sources */,
 				57CB0F591A4671B400A83DC3 /* ConditionModel.m in Sources */,
 				57CB0F3D1A46439800A83DC3 /* NSDictionary+OperationURL.m in Sources */,
-				D26B4B8B1A52CB590092AFF5 /* ShareViewController.m in Sources */,
 				574700711A502D9C0018045B /* MenuViewController.m in Sources */,
 				579AEBAD1A42AB0E00C9AC1B /* RYRequest.m in Sources */,
 				57CB0F4E1A4668CF00A83DC3 /* WeatherNetOperation.m in Sources */,
@@ -986,6 +985,7 @@
 				57CF3BF21A4A8BE800E2489F /* PanView.m in Sources */,
 				57CD73E81A46D40E00A00DF3 /* RYModel.m in Sources */,
 				5796EC561A45AC8F0010CA73 /* WoeidNetOperation.m in Sources */,
+				B4E8FCEF1A538FAE00C9F431 /* EditPlaceViewController.m in Sources */,
 				A40902041A37302C00EE891E /* main.m in Sources */,
 				57DC65D31A52374000842AD4 /* RYLocationManager.m in Sources */,
 				57D362321A513B7A0080BFC2 /* NavigationView.m in Sources */,

@@ -7,7 +7,8 @@
 //
 
 #import "MenuViewController.h"
-#import "ShareViewController.h"
+#import "EditPlaceViewController.h"
+
 @interface MenuViewController ()
 @property (nonatomic, strong)UITableView* myTableView;
 @property (nonatomic ,strong) NSArray* cellList1  ;
@@ -71,9 +72,21 @@ static NSString *identifier = @"cell";
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    ShareViewController* share = [[ShareViewController alloc]init ] ;
-    [self presentModalViewController:share animated:YES];
-    
+    switch (indexPath.row) {
+        case 0:
+            NSLog(@"分享") ;
+            break;
+        case 1:
+        {
+            EditPlaceViewController* share = [[EditPlaceViewController alloc]init ] ;
+            [self presentModalViewController:share animated:YES];
+        }
+            break;
+
+            
+        default:
+            break;
+    }
     
 }
 @end
