@@ -79,7 +79,7 @@ static NSString *identifier = @"cell";
         case 1:
         {
             EditPlaceViewController* share = [[EditPlaceViewController alloc]init ] ;
-            [self presentModalViewController:share animated:YES];
+            [self presentViewController:share animated:YES completion:nil];
         }
             break;
 
