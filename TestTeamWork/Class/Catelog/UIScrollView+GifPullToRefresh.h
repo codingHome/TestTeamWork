@@ -24,7 +24,7 @@
 //  THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "UIImageView+WebCache.h"
+#import "UIImageView+LoadImage.h"
 #import "WeatherModel.h"
 
 #define GifRefreshControlHeight 50.0

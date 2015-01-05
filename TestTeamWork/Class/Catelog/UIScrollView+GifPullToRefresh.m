@@ -108,7 +108,7 @@ static char UIScrollViewGifPullToRefresh;
         
         WeatherModel *model = [[WeatherModel alloc]initWithId:@"Weather" tableName:TABLE_NAME];
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, model.imageWidth, model.imageHeight)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:model.imageURL]];
+        [imageView loadImageWithURL:model.imageURL];
         
         
         [self addSubview:_refreshView];

@@ -58,7 +58,7 @@
 -(void)setImageUrl:(NSString *)imageUrl{
     self.detailImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, self.textLabel.frame.size.height + GAP, self.bounds.size.width, self.bounds.size.height/3)];
     self.detailImage.contentMode = UIViewContentModeScaleAspectFit;
-    [self.detailImage sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    [self.detailImage loadImageWithURL:imageUrl];
     
     CGFloat height = self.detailImage.image.size.height * self.detailImage.frame.size.width / self.detailImage.image.size.width;
     

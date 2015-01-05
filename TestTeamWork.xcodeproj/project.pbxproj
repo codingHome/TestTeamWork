@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E791658A2C7426D95C62011 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A14442401A72DA6647E1B75 /* libPods.a */; };
+		57191C4C1A5A960C00629F91 /* UIImageView+LoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 57191C4B1A5A960C00629F91 /* UIImageView+LoadImage.m */; };
 		574700711A502D9C0018045B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574700701A502D9C0018045B /* MenuViewController.m */; };
 		579605EB1A48FECC0022E1B3 /* UIColor+hexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 579605EA1A48FECC0022E1B3 /* UIColor+hexColor.m */; };
 		579606711A4943A10022E1B3 /* UIScrollView+GifPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 579606701A4943A10022E1B3 /* UIScrollView+GifPullToRefresh.m */; };
@@ -159,6 +160,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57191C4A1A5A960C00629F91 /* UIImageView+LoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadImage.h"; sourceTree = "<group>"; };
+		57191C4B1A5A960C00629F91 /* UIImageView+LoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadImage.m"; sourceTree = "<group>"; };
 		5747006F1A502D9C0018045B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		574700701A502D9C0018045B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		579605E91A48FECC0022E1B3 /* UIColor+hexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hexColor.h"; sourceTree = "<group>"; };
@@ -567,6 +570,8 @@
 				579605EA1A48FECC0022E1B3 /* UIColor+hexColor.m */,
 				57CB0F3B1A46439800A83DC3 /* NSDictionary+OperationURL.h */,
 				57CB0F3C1A46439800A83DC3 /* NSDictionary+OperationURL.m */,
+				57191C4A1A5A960C00629F91 /* UIImageView+LoadImage.h */,
+				57191C4B1A5A960C00629F91 /* UIImageView+LoadImage.m */,
 			);
 			path = Catelog;
 			sourceTree = "<group>";
@@ -986,6 +991,7 @@
 				57CD73E81A46D40E00A00DF3 /* RYModel.m in Sources */,
 				5796EC561A45AC8F0010CA73 /* WoeidNetOperation.m in Sources */,
 				B4E8FCEF1A538FAE00C9F431 /* EditPlaceViewController.m in Sources */,
+				57191C4C1A5A960C00629F91 /* UIImageView+LoadImage.m in Sources */,
 				A40902041A37302C00EE891E /* main.m in Sources */,
 				57DC65D31A52374000842AD4 /* RYLocationManager.m in Sources */,
 				57D362321A513B7A0080BFC2 /* NavigationView.m in Sources */,

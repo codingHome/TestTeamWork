@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "POP.h"
-#import "UIImageView+WebCache.h"
+#import "UIImageView+LoadImage.h"
 
 @interface PanView : UIView
 /*
