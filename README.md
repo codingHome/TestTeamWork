@@ -1,58 +1,59 @@
 #TestTeamWork
-============
+===
+RYFramWork
+===
 
-GIT 基本操作
+##RYRequest
 
+* 继承自__AFHTTPRequestOperationManager__是GET请求和POST请求的封装。
 
-##克隆原有仓库
+##RYNetOperation
 
-**git clone git@github.com:codingHome/TestTeamWork.git**
+* 网络请求类，通过调用RYRequest来实现网络请求，并以delegate的方式实现回调。
+* 请求类属性
 
-##生成新的仓库
-**git init**
+	使用方式 | 属性 |
+	------------ | ------------- 
+	请求服务器URL | NSString *url  
+	请求参数 | NSDictionary *params  
+	完整的GET_URL | NSString *completeURL 
+	完整请求回调数据 |NSDictionary *responseData
+	请求数据解析对象 |id resultData
+* delegate回调
 
-##本地仓库关联远程仓库
-**git remote add origin ssh**
+	```objc
+	
+	- (void)netOperationDidFinish:(RYNetOperation *)operation;
+	- (void)netOperationDidFailed:(RYNetOperation *)operation;
+	
+	```
+	
+##RYModel
 
-##项目修改后查看状态
-**git status**
+* 继承自__JSONModel__，是工程中model层的基类。
+* 命名时应与网络请求类的名称相对应。
+ 
+	例：
+	
+	RYNetOperation | RYModel |
+	------------ | ------------- 
+	`Woeid`NetOperation | `Woeid`Model
+	
+	
+##RYCache
 
-##添加本地版本库
-1. ###添加所有文件
-**git add .**
-2. ###添加修改添加操作的文件
-**git add -A**
+* 继承自__YTKKeyValueStore__，是以键值方式存储的数据库。
+* 在网络请求成功后会自动调用，用于缓存。
+* 无网的状态下会自动加载上次缓存的数据。
 
-##删除文件
-**git rm**
+##RYNetObservor
 
-##确认
-**git commit -m "test"**
+* 继承自__Reachability__，用于判断当前的网络状态。
 
-##版本回退
-1. ###工作区版本回退
-**git checkout -- file**
-2. ###暂存区版本回退
-**git reset HEAD file**
+##UIColor+hexColor
 
+* 将16进制颜色转成UIColor。
 
-##提交远程库
-1. ###提交主分支
-**git push origin master**
-2. ###提交开发分支
-**git push origin branch_dev**
+##UIImageView+LoadImage
 
-##查看log
-**git log**
-
-##新建分支
-**git checkout -b dev**
-
-##显示分支
-**git branch**
-
-##切换分支
-**git checkout master**
-
-##分支合并图
-**git log —graph**
+* 对于__SDWebImage__的封装，用于图片的加载与缓存。
