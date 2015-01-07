@@ -142,6 +142,7 @@
 		57D080221A5CC89B0020570C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CB0F631A46B9FA00A83DC3 /* CoreLocation.framework */; };
 		57D080241A5CC8AC0020570C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D080231A5CC8AC0020570C /* Accelerate.framework */; };
 		57D080271A5CC9250020570C /* UIImage+BlurImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D080261A5CC9250020570C /* UIImage+BlurImage.m */; };
+		57D0802A1A5CD6160020570C /* UIImage+RTTint.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D080291A5CD6160020570C /* UIImage+RTTint.m */; };
 		57D362321A513B7A0080BFC2 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D362311A513B7A0080BFC2 /* NavigationView.m */; };
 		57D362351A5146690080BFC2 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D362341A5146690080BFC2 /* SearchTableViewController.m */; };
 		57DC65D31A52374000842AD4 /* RYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DC65D21A52374000842AD4 /* RYLocationManager.m */; };
@@ -323,6 +324,8 @@
 		57D080231A5CC8AC0020570C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		57D080251A5CC9250020570C /* UIImage+BlurImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BlurImage.h"; sourceTree = "<group>"; };
 		57D080261A5CC9250020570C /* UIImage+BlurImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BlurImage.m"; sourceTree = "<group>"; };
+		57D080281A5CD6160020570C /* UIImage+RTTint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RTTint.h"; sourceTree = "<group>"; };
+		57D080291A5CD6160020570C /* UIImage+RTTint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RTTint.m"; sourceTree = "<group>"; };
 		57D362301A513B7A0080BFC2 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
 		57D362311A513B7A0080BFC2 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
 		57D362331A5146690080BFC2 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
@@ -582,6 +585,8 @@
 				57191C4B1A5A960C00629F91 /* UIImageView+LoadImage.m */,
 				57D080251A5CC9250020570C /* UIImage+BlurImage.h */,
 				57D080261A5CC9250020570C /* UIImage+BlurImage.m */,
+				57D080281A5CD6160020570C /* UIImage+RTTint.h */,
+				57D080291A5CD6160020570C /* UIImage+RTTint.m */,
 			);
 			path = Catelog;
 			sourceTree = "<group>";
@@ -987,6 +992,7 @@
 				57D362351A5146690080BFC2 /* SearchTableViewController.m in Sources */,
 				57CF3BF51A4A997D00E2489F /* PanModel.m in Sources */,
 				A40902071A37302C00EE891E /* AppDelegate.m in Sources */,
+				57D0802A1A5CD6160020570C /* UIImage+RTTint.m in Sources */,
 				57D080271A5CC9250020570C /* UIImage+BlurImage.m in Sources */,
 				5796EC591A45ACA40010CA73 /* WoeidModel.m in Sources */,
 				57CD73EC1A46EC4E00A00DF3 /* RYCache.m in Sources */,

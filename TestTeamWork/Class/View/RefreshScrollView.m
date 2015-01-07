@@ -7,6 +7,8 @@
 //
 
 #import "RefreshScrollView.h"
+#import "UIImage+BlurImage.h"
+#import "UIImage+RTTint.h"
 
 @implementation RefreshScrollView
 
@@ -18,6 +20,12 @@
         self.DrawingImgs = [NSMutableArray array];
         self.LoadingImgs = [NSMutableArray array];
         [self creatGifScrollView];
+        
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:@"http://cc.cocimg.com/api/uploads/20150107/1420592944308019.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            imageView.image = [image blurImageWithBlur:0.2];
+        }];
+        [self addSubview:imageView];
     }
     return self;
 }
